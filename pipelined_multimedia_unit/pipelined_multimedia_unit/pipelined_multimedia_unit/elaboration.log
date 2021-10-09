@@ -1,4 +1,4 @@
-Active-HDL 11.1.262.7351 2021-10-08 17:33:33
+Active-HDL 11.1.262.7351 2021-10-08 20:12:11
 
 Elaboration top modules:
 Architecture                  alu_arch(alu)
@@ -26,9 +26,3 @@ ieee                      | Standard IEEE packages library
 pipelined_multimedia_unit | None
 std                       | Standard VHDL library
 -------------------------------------------------------------------------------------------------------------
-
-
-Simulation Options: asim -O5 +access +r +m+alu alu alu_arch
-
-
-The performance of simulation is reduced. Version Student Edition

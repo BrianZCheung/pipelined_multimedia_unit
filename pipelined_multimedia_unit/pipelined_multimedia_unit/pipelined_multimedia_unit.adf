@@ -23,6 +23,6 @@ FAMILY=
 [SpecTracer]
 WindowVisible=0
 [HierarchyViewer]
-HierarchyInformation=alu|alu_arch|0 
+HierarchyInformation=alu|alu_arch|0  
 ShowHide=ShowTopLevel
 Selected=

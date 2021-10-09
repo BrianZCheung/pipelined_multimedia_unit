@@ -12,7 +12,11 @@ use ieee.numeric_std.all;
 
 entity alu is
 	port(
-		instruction_in : in std_logic_vector(24 downto 0)-- instruction being executed
+	instruction_in : in std_logic_vector(24 downto 0);-- instruction being executed		 
+	rs_1 : in std_logic_vector(127 downto 0);   
+	rs_2 : in std_logic_vector(127 downto 0);
+	rs_3 : in std_logic_vector(127 downto 0);
+	rd : in std_logic_vector(127 downto 0)
 	);
 end alu;
 
