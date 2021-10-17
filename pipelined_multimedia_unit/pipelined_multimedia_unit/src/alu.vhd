@@ -122,6 +122,7 @@ begin
 	r4: process(instruction_in(24 downto 23))
 	variable temp_int: integer;
 	variable temp_vector: std_logic_vector(31 downto 0);
+	variable temp_vector2: std_logic_vector(127 downto 0);
 	begin
 		if(instruction_in(24 downto 23) = "11") then
 			if(instruction_in(18 downto 15) = "0000") then
@@ -238,6 +239,12 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1010") then
 				--ROT: rotate bits right block
+				temp_int := to_integer(unsigned(rs_2(6 downto 0)));
+				temp_vector2 := rs_1;
+				for index in 0 to temp_int loop
+					temp_vector2 := temp_vector2(0) & temp_vector2(127 downto 1);
+				end loop;
+				rd <= temp_vector2;
 				
 			elsif(instruction_in(18 downto 15) = "1011") then
 				--ROTW: rotate bits in word block
