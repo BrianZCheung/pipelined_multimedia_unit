@@ -120,8 +120,133 @@ begin
 	end process r3;
 	
 	r4: process(instruction_in(24 downto 23))
+	variable temp_int: integer;
+	variable temp_vector: std_logic_vector(31 downto 0);
 	begin
 		if(instruction_in(24 downto 23) = "11") then
+			if(instruction_in(18 downto 15) = "0000") then
+				-- nop
+			
+			elsif(instruction_in(18 downto 15) = "0001") then
+				--AH: add halfword block
+				for index in 0 to 7 loop
+					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
+					if(temp_int > 65535) then
+						temp_int := temp_int - 65535;
+					end if;
+					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
+				end loop;
+			
+				
+			elsif(instruction_in(18 downto 15) = "0010") then
+				--AHS: add halfword saturated block
+				for index in 0 to 7 loop
+					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
+					if(temp_int > 32767) then
+						temp_int := 32767;	
+					end if;
+					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "0011") then
+				--BCW: broadcast word block
+				temp_vector := rs_1(31 downto 0);
+				for index in 0 to 3 loop
+					rd(index*32+31 downto index*32) <= temp_vector;
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "0100") then
+				--CGH: carry generate halfword block
+				for index in 0 to 7 loop
+					temp_int := to_integer(signed(rs_1(16*index+15 downto index*16))) + to_integer(signed(rs_2(16*index+15 downto index*16)));
+					if(temp_int < -32768 or temp_int > 32767) then
+						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(1,16));
+					else
+						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(0,16));
+					end if;
+					
+				end loop;
+				
+					
+			elsif(instruction_in(18 downto 15) = "0101") then
+				--CLZ: count leading zeros in word block
+				for segment in 0 to 3 loop
+					temp_vector := rs_1(segment*16+31 downto segment*16);
+					temp_int := 0;
+					for index in 31 downto 0 loop
+						exit when temp_vector(index) = '1';
+						temp_int := temp_int + 1;
+					end loop;
+					rd(segment*16+31 downto segment*16) <= std_logic_vector(to_unsigned(temp_int, 16));
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "0110") then
+				--MAX: max signed word block
+				for index in 0 to 3 loop
+					if(signed(rs_1(index*16+31 downto index*16)) >= signed(rs_2(index*16+31 downto index*16))) then
+						temp_vector := rs_1(index*16+31 downto index*16);
+					else
+						temp_vector := rs_2(index*16+31 downto index*16);
+					end if;
+					
+					rd(index*16+31 downto index*16) <= temp_vector;
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "0111") then
+				--MIN: min signed word block
+				for index in 0 to 3 loop
+					if(signed(rs_1(index*16+31 downto index*16)) <= signed(rs_2(index*16+31 downto index*16))) then
+						temp_vector := rs_1(index*16+31 downto index*16);
+					else
+						temp_vector := rs_2(index*16+31 downto index*16);
+					end if;
+					
+					rd(index*16+31 downto index*16) <= temp_vector;
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "1000") then
+				--MSGN: multiply sign block
+				for index in 0 to 3 loop
+					if(signed(rs_2(index*16+31 downto index*16)) < 0) then
+						temp_int := to_integer(signed( rs_1(index*16+31 downto index*16) ))*(-1);
+						temp_vector(index*16+31 downto index*16) := std_logic_vector(to_signed(temp_int, 16) );
+					else
+						temp_vector(index*16+31 downto index*16) := rs_1(index*16+31 downto index*16);
+					end if;
+					
+					rd(index*16+31 downto index*16) <= temp_vector(index*16+31 downto index*16);
+				end loop;
+				
+				
+			elsif(instruction_in(18 downto 15) = "1001") then
+				--POPCNTH: count ones in halfwords block
+				
+			elsif(instruction_in(18 downto 15) = "1010") then
+				--ROT: rotate bits right block
+				
+			elsif(instruction_in(18 downto 15) = "1011") then
+				--ROTW: rotate bits in word block
+				
+			elsif(instruction_in(18 downto 15) = "1100") then
+				--SHLHI: shift left halfword immediate block
+				
+			elsif(instruction_in(18 downto 15) = "1101") then
+				--SFH: subtract from halfword block
+				
+			elsif(instruction_in(18 downto 15) = "1110") then
+				--SFHS: subtract from halfword saturated block
+				
+			elsif(instruction_in(18 downto 15) = "1111") then
+				--XOR: bitwise logical exclusive-or block	
+			end if;
+			
+			
+			
 			
 		end if;
 	end process r4;
