@@ -120,8 +120,68 @@ begin
 	end process r3;
 	
 	r4: process(instruction_in(24 downto 23))
+	variable temp_int: integer;
+	--conversion notes: integer to std_logic_vector: std_logic_vector( to_unsigned([the int], [num of bits]) )
+	--				std_logic_vector to integer:
 	begin
 		if(instruction_in(24 downto 23) = "11") then
+			if(instruction_in(18 downto 15) = "0000") then
+				-- nop
+			
+			elsif(instruction_in(18 downto 15) = "0001") then
+				--AH: add halfword block
+				for index in 0 to 7 loop
+					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
+					if(temp_int > 65535) then
+						temp_int := temp_int - 65535;
+					end if;
+					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
+				end loop;	
+			elsif(instruction_in(18 downto 15) = "0010") then
+				--AHS: add halfword saturated block
+				
+			elsif(instruction_in(18 downto 15) = "0011") then
+				--BCW: broadcast word block
+				
+			elsif(instruction_in(18 downto 15) = "0100") then
+				--CGH: carry generate halfword block
+				
+			elsif(instruction_in(18 downto 15) = "0101") then
+				--CLZ: count leading zeros in word block
+				
+			elsif(instruction_in(18 downto 15) = "0110") then
+				--MAX: max signed word block
+				
+			elsif(instruction_in(18 downto 15) = "0111") then
+				--MIN: min signed word block
+				
+			elsif(instruction_in(18 downto 15) = "1000") then
+				--MSGN: multiply sign block
+				
+			elsif(instruction_in(18 downto 15) = "1001") then
+				--POPCNTH: count ones in halfwords block
+				
+			elsif(instruction_in(18 downto 15) = "1010") then
+				--ROT: rotate bits right block
+				
+			elsif(instruction_in(18 downto 15) = "1011") then
+				--ROTW: rotate bits in word block
+				
+			elsif(instruction_in(18 downto 15) = "1100") then
+				--SHLHI: shift left halfword immediate block
+				
+			elsif(instruction_in(18 downto 15) = "1101") then
+				--SFH: subtract from halfword block
+				
+			elsif(instruction_in(18 downto 15) = "1110") then
+				--SFHS: subtract from halfword saturated block
+				
+			elsif(instruction_in(18 downto 15) = "1111") then
+				--XOR: bitwise logical exclusive-or block	
+			end if;
+			
+			
+			
 			
 		end if;
 	end process r4;
