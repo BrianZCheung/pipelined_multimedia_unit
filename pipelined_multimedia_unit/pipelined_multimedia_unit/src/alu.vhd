@@ -123,6 +123,7 @@ begin
 	variable temp_int: integer;
 	variable temp_vector: std_logic_vector(31 downto 0);
 	variable temp_vector2: std_logic_vector(127 downto 0);
+	variable temp_vector3: std_logic_vector(15 downto 0);
 	begin
 		if(instruction_in(24 downto 23) = "11") then
 			if(instruction_in(18 downto 15) = "0000") then
@@ -250,17 +251,26 @@ begin
 			elsif(instruction_in(18 downto 15) = "1011") then
 				--ROTW: rotate bits in word block
 				temp_int := to_integer(unsigned(rs_2(5 downto 0)));
-				for segment in 0 to 3 loop
-					temp_vector := rs_1(segment*32+31 downto segment*32);
-					for index in 0 to temp_int loop
+				for index in 0 to 3 loop
+					temp_vector := rs_1(index*32+31 downto index*32);
+					for rot in 0 to temp_int loop
 						temp_vector := temp_vector(0) & temp_vector(31 downto 1);
 					end loop;
-					rd(segment*32+31 downto segment*32) <= temp_vector;
+					rd(index*32+31 downto index*32) <= temp_vector;
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "1100") then
 				--SHLHI: shift left halfword immediate block
+				temp_int := to_integer(unsigned(rs_2(4 downto 0)));
+				for index in 0 to 7 loop
+					temp_vector3 := rs_1(index*16+15 downto index*16);
+					for	rot in 0 to temp_int loop
+						temp_vector3 := temp_vector3(14 downto 0) & '0';
+					end loop;
+					rd(index*16+15 downto index*16) <= temp_vector3;
+				end loop;
+				
 				
 			elsif(instruction_in(18 downto 15) = "1101") then
 				--SFH: subtract from halfword block
