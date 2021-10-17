@@ -1,0 +1,106 @@
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+asim -O5 +access +r +m+alu alu alu_arch
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
+# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Error: COMP96_0015: alu.vhd : (16, 2): ';' expected.
+# Error: COMP96_0015: alu.vhd : (17, 2): ';' expected.
+# Error: COMP96_0015: alu.vhd : (18, 2): ';' expected.
+# Error: COMP96_0015: alu.vhd : (19, 2): ';' expected.
+# Compile Architecture "alu_arch" of Entity "alu"
+# Compile failure 4 Errors 0 Warnings  Analysis time :  16.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 7218 kB (elbread=1280 elab2=5800 kernel=138 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
+#  8:11 PM, Friday, October 8, 2021
+#  Simulation has been initialized
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+alu alu alu_arch
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
+# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Error: COMP96_0015: alu.vhd : (16, 2): ';' expected.
+# Compile Architecture "alu_arch" of Entity "alu"
+# Compile failure 1 Errors 0 Warnings  Analysis time :  16.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 7218 kB (elbread=1280 elab2=5800 kernel=138 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
+#  8:12 PM, Friday, October 8, 2021
+#  Simulation has been initialized
+endsim
+# VSIM: Simulation has finished.
+asim -O5 +access +r +m+alu alu alu_arch
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# VSIM: Stack memory: 32MB
+# VSIM: Retval memory: 32MB
+# 
+acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
+# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]
+# ELBREAD: Elaboration process.
+# ELBREAD: Elaboration time 0.0 [s].
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 7219 kB (elbread=1280 elab2=5801 kernel=138 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
+#  8:12 PM, Friday, October 8, 2021
+#  Simulation has been initialized
+endsim
+# VSIM: Simulation has finished.
