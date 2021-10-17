@@ -287,7 +287,8 @@ begin
 				
 				
 			elsif(instruction_in(18 downto 15) = "1111") then
-				--XOR: bitwise logical exclusive-or block	
+				--XOR: bitwise logical exclusive-or block
+				rd <= rs_1 xor rs_2;
 			end if;
 			
 			
