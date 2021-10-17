@@ -24,11 +24,13 @@ architecture alu_arch of alu is
 
 begin
 	
-	li: process(instruction_in(24))
+	li: process(instruction_in(24))				   
+	variable result: std_logic_vector(127 downto 0);
 	begin 
-		if(instruction_in(24) = '0') then
-			
-		end if;
+		if(instruction_in(24) = '0') then	  	
+			result(((16*to_integer(unsigned(instruction_in(23 downto 21))))+15) downto (16*to_integer(unsigned(instruction_in(23 downto 21))))) := instruction_in(20 downto 5);	
+		end if;	  
+		rd <= result;
 	end process li;
 	
 	r3: process(instruction_in(24 downto 23)) 
