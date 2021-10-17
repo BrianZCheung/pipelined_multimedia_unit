@@ -277,6 +277,14 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1110") then
 				--SFHS: subtract from halfword saturated block
+				for index in 0 to 7 loop
+					temp_int := to_integer(signed(rs_2(index*16+15 downto index*16))) - to_integer(signed(rs_1(index*16+15 downto index*16)));
+					if(temp_int < -32768) then
+						temp_int :=	-32768;
+					end if;
+					rd(index*16+15 downto index*16) <= std_logic_vector(to_signed(temp_int, 16));
+				end loop;
+				
 				
 			elsif(instruction_in(18 downto 15) = "1111") then
 				--XOR: bitwise logical exclusive-or block	
