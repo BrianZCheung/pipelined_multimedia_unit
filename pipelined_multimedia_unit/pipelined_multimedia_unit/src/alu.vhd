@@ -246,8 +246,18 @@ begin
 				end loop;
 				rd <= temp_vector2;
 				
+				
 			elsif(instruction_in(18 downto 15) = "1011") then
 				--ROTW: rotate bits in word block
+				temp_int := to_integer(unsigned(rs_2(5 downto 0)));
+				for segment in 0 to 3 loop
+					temp_vector := rs_1(segment*32+31 downto segment*32);
+					for index in 0 to temp_int loop
+						temp_vector := temp_vector(0) & temp_vector(31 downto 1);
+					end loop;
+					rd(segment*32+31 downto segment*32) <= temp_vector;
+				end loop;
+				
 				
 			elsif(instruction_in(18 downto 15) = "1100") then
 				--SHLHI: shift left halfword immediate block
