@@ -225,6 +225,16 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1001") then
 				--POPCNTH: count ones in halfwords block
+				for segment in 0 to 7 loop
+					temp_vector := rs_1(segment*16+15 downto segment*16);
+					temp_int := 0;
+					for index in 31 downto 0 loop
+						exit when temp_vector(index) = '0';
+						temp_int := temp_int + 1;
+					end loop;
+					rd(segment*16+15 downto segment*16) <= std_logic_vector(to_unsigned(temp_int, 16));
+				end loop;
+				
 				
 			elsif(instruction_in(18 downto 15) = "1010") then
 				--ROT: rotate bits right block
