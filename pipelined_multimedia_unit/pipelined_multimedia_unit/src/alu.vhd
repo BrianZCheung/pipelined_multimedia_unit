@@ -42,7 +42,7 @@ begin
 		if(instruction_in(24 downto 23) = "10") then
 			if(instruction_in(22 downto 20) = "000") then
 				for i in 0 to 3 loop
-					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+15 downto 32*i)))*to_integer( signed(rs_2((32*i)+15 downto 32*i))) ) - to_integer( signed(rs_1((32*i)+15 downto 32*i))) ),32));
+					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+15 downto 32*i)))*to_integer( signed(rs_2((32*i)+15 downto 32*i))) ) + to_integer( signed(rs_1((32*i)+15 downto 32*i))) ),32));
 				end loop;	 
 				if(to_integer(signed(result)) < intMin) then
 					result := std_logic_vector(to_signed(intMin,128));
@@ -51,7 +51,7 @@ begin
 				end if;
 			elsif(instruction_in(22 downto 20) = "001") then	 
 				for i in 0 to 3 loop
-					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+31 downto (32*i)+16)))*to_integer( signed(rs_2((32*i)+31 downto (32*i)+16))) ) - to_integer( signed(rs_1((32*i)+31 downto (32*i)+16))) ),32));
+					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+31 downto (32*i)+16)))*to_integer( signed(rs_2((32*i)+31 downto (32*i)+16))) ) + to_integer( signed(rs_1((32*i)+31 downto (32*i)+16))) ),32));
 				end loop;	 
 				if(to_integer(signed(result)) < intMin) then
 					result := std_logic_vector(to_signed(intMin,128));
@@ -59,9 +59,23 @@ begin
 					result := std_logic_vector(to_signed(intMax,128));
 				end if;	
 			elsif(instruction_in(22 downto 20) = "010") then   
-				
+				for i in 0 to 3 loop
+					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+15 downto 32*i)))*to_integer( signed(rs_2((32*i)+15 downto 32*i))) ) - to_integer( signed(rs_1((32*i)+15 downto 32*i))) ),32));
+				end loop;	 
+				if(to_integer(signed(result)) < intMin) then
+					result := std_logic_vector(to_signed(intMin,128));
+				elsif(to_integer(signed(result)) > intMax) then
+					result := std_logic_vector(to_signed(intMax,128));
+				end if;
 			elsif(instruction_in(22 downto 20) = "011") then  
-				
+				for i in 0 to 3 loop
+					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+31 downto (32*i)+16)))*to_integer( signed(rs_2((32*i)+31 downto (32*i)+16))) ) - to_integer( signed(rs_1((32*i)+31 downto (32*i)+16))) ),32));
+				end loop;	 
+				if(to_integer(signed(result)) < intMin) then
+					result := std_logic_vector(to_signed(intMin,128));
+				elsif(to_integer(signed(result)) > intMax) then
+					result := std_logic_vector(to_signed(intMax,128));
+				end if;	
 			elsif(instruction_in(22 downto 20) = "100") then		   
 				
 			elsif(instruction_in(22 downto 20) = "101") then	   
