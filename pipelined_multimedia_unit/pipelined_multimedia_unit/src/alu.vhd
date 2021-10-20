@@ -52,84 +52,100 @@ begin
 		if(instruction_in(24 downto 23) = "10") then	
 			--Signed Integer Multiply-Add Low with Saturation:
 			if(instruction_in(22 downto 20) = "000") then
-				for i in 0 to 3 loop
+				for i in 0 to 3 loop   
+					--compute at the respective 32-bit field
 					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+15 downto 32*i)))*to_integer( signed(rs_2((32*i)+15 downto 32*i))) ) + to_integer( signed(rs_1((32*i)+31 downto (32*i)))) ),32));
+					--check if the 32-bit field is at saturation
+					if(to_integer(signed(result(((32*i)+31) downto (32*i)))) < intMin) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMin,32));
+					elsif(to_integer(signed(result(((32*i)+31) downto (32*i)))) > intMax) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMax,32));
+					end if;
 				end loop;	 
-				if(to_integer(signed(result)) < intMin) then
-					result := std_logic_vector(to_signed(intMin,128));
-				elsif(to_integer(signed(result)) > intMax) then
-					result := std_logic_vector(to_signed(intMax,128));
-				end if;	
 			--Signed Integer Multiply-Add High with Saturation
 			elsif(instruction_in(22 downto 20) = "001") then	 
 				for i in 0 to 3 loop
+					--compute at the respective 32-bit field
 					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+31 downto (32*i)+16)))*to_integer( signed(rs_2((32*i)+31 downto (32*i)+16))) ) + to_integer( signed(rs_1((32*i)+31 downto (32*i)))) ),32));
-				end loop;	 
-				if(to_integer(signed(result)) < intMin) then
-					result := std_logic_vector(to_signed(intMin,128));
-				elsif(to_integer(signed(result)) > intMax) then
-					result := std_logic_vector(to_signed(intMax,128));
-				end if;	
+					--check if the 32-bit field is at saturation
+					if(to_integer(signed(result(((32*i)+31) downto (32*i)))) < intMin) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMin,32));
+					elsif(to_integer(signed(result(((32*i)+31) downto (32*i)))) > intMax) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMax,32));
+					end if;
+				end loop;	 	
 			--Signed Integer Multiply-Subtract Low with Saturation
 			elsif(instruction_in(22 downto 20) = "010") then   
-				for i in 0 to 3 loop
+				for i in 0 to 3 loop					
+					--compute at the respective 32-bit field
 					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+15 downto 32*i)))*to_integer( signed(rs_2((32*i)+15 downto 32*i))) ) - to_integer( signed(rs_1((32*i)+31 downto (32*i)))) ),32));
-				end loop;	 
-				if(to_integer(signed(result)) < intMin) then
-					result := std_logic_vector(to_signed(intMin,128));
-				elsif(to_integer(signed(result)) > intMax) then
-					result := std_logic_vector(to_signed(intMax,128));
-				end if;				
+					--check if the 32-bit field is at saturation
+					if(to_integer(signed(result(((32*i)+31) downto (32*i)))) < intMin) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMin,32));
+					elsif(to_integer(signed(result(((32*i)+31) downto (32*i)))) > intMax) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMax,32));
+					end if;
+				end loop;	 			
 			--Signed Integer Multiply-Subtract High with Saturation
 			elsif(instruction_in(22 downto 20) = "011") then  
-				for i in 0 to 3 loop
+				for i in 0 to 3 loop   
+					--compute at the respective 32-bit field
 					result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((32*i)+31 downto (32*i)+16)))*to_integer( signed(rs_2((32*i)+31 downto (32*i)+16))) ) - to_integer( signed(rs_1((32*i)+31 downto (32*i)))) ),32));
-				end loop;	 
-				if(to_integer(signed(result)) < intMin) then
-					result := std_logic_vector(to_signed(intMin,128));
-				elsif(to_integer(signed(result)) > intMax) then
-					result := std_logic_vector(to_signed(intMax,128));
-				end if;				
+					--check if the 32-bit field is at saturation
+					if(to_integer(signed(result(((32*i)+31) downto (32*i)))) < intMin) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMin,32));
+					elsif(to_integer(signed(result(((32*i)+31) downto (32*i)))) > intMax) then
+						result(((32*i)+31) downto (32*i)) := std_logic_vector(to_signed(intMax,32));
+					end if;
+				end loop;					
 			--Signed Long Integer Multiply-Add Low with Saturation
 			elsif(instruction_in(22 downto 20) = "100") then		   
-				for i in 0 to 1 loop
-					result(((64*i)+63) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+31 downto 64*i)))*to_integer( signed(rs_2((64*i)+31 downto 64*i))) ) + to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
-				end loop;	 
-				if(to_integer(signed(result)) < longMin) then
-					result := std_logic_vector(to_signed(longMin,128));
-				elsif(to_integer(signed(result)) > longMax) then
-					result := std_logic_vector(to_signed(longMax,128));
-				end if;											
+				for i in 0 to 1 loop	 
+					--compute at the respective 64-bit field
+					result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+31 downto 64*i)))*to_integer( signed(rs_2((64*i)+31 downto 64*i))) ) + to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+					--check if the 64-bit field is at saturation
+					if(to_integer(signed(result(((64*i)+63) downto (64*i)))) < longMin) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMin,64));
+					elsif(to_integer(signed(result(((64*i)+63) downto (64*i)))) > longMax) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMax,64));
+					end if;
+				end loop;	 											
 			--Signed Long Integer Multiply-Add High with Saturation
 			elsif(instruction_in(22 downto 20) = "101") then	   
-				for i in 0 to 1 loop
-					result(((64*i)+63) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+63 downto (64*i)+32)))*to_integer( signed(rs_2((64*i)+63 downto (64*i)+32))) ) + to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+				for i in 0 to 1 loop	 
+					--compute at the respective 64-bit field
+					result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+63 downto (64*i)+32)))*to_integer( signed(rs_2((64*i)+63 downto (64*i)+32))) ) + to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+					--check if the 64-bit field is at saturation
+					if(to_integer(signed(result(((64*i)+63) downto (64*i)))) < longMin) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMin,64));
+					elsif(to_integer(signed(result(((64*i)+63) downto (64*i)))) > longMax) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMax,64));
+					end if;
 				end loop;	 
-				if(to_integer(signed(result)) < longMin) then
-					result := std_logic_vector(to_signed(longMin,128));
-				elsif(to_integer(signed(result)) > longMax) then
-					result := std_logic_vector(to_signed(longMax,128));
-				end if;	
 			--Signed Long Integer Multiply-Subtract Low with Saturation
 			elsif(instruction_in(22 downto 20) = "110") then		  
-				for i in 0 to 1 loop
-					result(((64*i)+63) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+31 downto 64*i)))*to_integer( signed(rs_2((64*i)+31 downto 64*i))) ) - to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
-				end loop;	 
-				if(to_integer(signed(result)) < longMin) then
-					result := std_logic_vector(to_signed(longMin,128));
-				elsif(to_integer(signed(result)) > longMax) then
-					result := std_logic_vector(to_signed(longMax,128));
-				end if;					 
+				for i in 0 to 1 loop   
+					--compute at the respective 64-bit field
+					result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+31 downto 64*i)))*to_integer( signed(rs_2((64*i)+31 downto 64*i))) ) - to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+					--check if the 64-bit field is at saturation
+					if(to_integer(signed(result(((64*i)+63) downto (64*i)))) < longMin) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMin,64));
+					elsif(to_integer(signed(result(((64*i)+63) downto (64*i)))) > longMax) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMax,64));
+					end if;
+				end loop;	 				 
 			--Signed Long Integer Multiply-Subtract High with Saturation
 			elsif(instruction_in(22 downto 20) = "111") then
 				for i in 0 to 1 loop
-					result(((64*i)+63) downto (32*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+63 downto (64*i)+32)))*to_integer( signed(rs_2((64*i)+63 downto (64*i)+32))) ) - to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+					--compute at the respective 64-bit field
+					result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(( ( to_integer( signed(rs_3((64*i)+63 downto (64*i)+32)))*to_integer( signed(rs_2((64*i)+63 downto (64*i)+32))) ) - to_integer( signed(rs_1((64*i)+63 downto (64*i)))) ),64));
+					--check if the 64-bit field is at saturation
+					if(to_integer(signed(result(((64*i)+63) downto (64*i)))) < longMin) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMin,64));
+					elsif(to_integer(signed(result(((64*i)+63) downto (64*i)))) > longMax) then
+						result(((64*i)+63) downto (64*i)) := std_logic_vector(to_signed(longMax,64));
+					end if;
 				end loop;	 
-				if(to_integer(signed(result)) < longMin) then
-					result := std_logic_vector(to_signed(longMin,128));
-				elsif(to_integer(signed(result)) > longMax) then
-					result := std_logic_vector(to_signed(longMax,128));
-				end if;
 			end if;		 
 			--rd gets the results of the 4.2 instructions into
 			rd <= result;
