@@ -143,9 +143,11 @@ begin
 			elsif(instruction_in(18 downto 15) = "0010") then
 				--AHS: add halfword saturated block
 				for index in 0 to 7 loop
-					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
+					temp_int := to_integer(signed(rs_1(16*index+15 downto index*16))) + to_integer(signed(rs_2(16*index+15 downto index*16)));
 					if(temp_int > 32767) then
-						temp_int := 32767;	
+						temp_int := 32767;
+					elsif(temp_int < -32768) then
+						temp_int := -32768;
 					end if;
 					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
 				end loop;
@@ -162,8 +164,8 @@ begin
 			elsif(instruction_in(18 downto 15) = "0100") then
 				--CGH: carry generate halfword block
 				for index in 0 to 7 loop
-					temp_int := to_integer(signed(rs_1(16*index+15 downto index*16))) + to_integer(signed(rs_2(16*index+15 downto index*16)));
-					if(temp_int < -32768 or temp_int > 32767) then
+					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
+					if(temp_int > 32767) then
 						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(1,16));
 					else
 						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(0,16));
@@ -175,53 +177,53 @@ begin
 			elsif(instruction_in(18 downto 15) = "0101") then
 				--CLZ: count leading zeros in word block
 				for segment in 0 to 3 loop
-					temp_vector := rs_1(segment*16+31 downto segment*16);
+					temp_vector := rs_1(segment*32+31 downto segment*32);
 					temp_int := 0;
 					for index in 31 downto 0 loop
 						exit when temp_vector(index) = '1';
 						temp_int := temp_int + 1;
 					end loop;
-					rd(segment*16+31 downto segment*16) <= std_logic_vector(to_unsigned(temp_int, 16));
+					rd(segment*32+31 downto segment*32) <= std_logic_vector(to_unsigned(temp_int, 32));
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "0110") then
 				--MAX: max signed word block
 				for index in 0 to 3 loop
-					if(signed(rs_1(index*16+31 downto index*16)) >= signed(rs_2(index*16+31 downto index*16))) then
-						temp_vector := rs_1(index*16+31 downto index*16);
+					if(signed(rs_1(index*32+31 downto index*32)) >= signed(rs_2(index*32+31 downto index*32))) then
+						temp_vector := rs_1(index*32+31 downto index*32);
 					else
-						temp_vector := rs_2(index*16+31 downto index*16);
+						temp_vector := rs_2(index*32+31 downto index*32);
 					end if;
 					
-					rd(index*16+31 downto index*16) <= temp_vector;
+					rd(index*32+31 downto index*32) <= temp_vector;
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "0111") then
 				--MIN: min signed word block
 				for index in 0 to 3 loop
-					if(signed(rs_1(index*16+31 downto index*16)) <= signed(rs_2(index*16+31 downto index*16))) then
-						temp_vector := rs_1(index*16+31 downto index*16);
+					if(signed(rs_1(index*32+31 downto index*32)) <= signed(rs_2(index*32+31 downto index*32))) then
+						temp_vector := rs_1(index*32+31 downto index*32);
 					else
-						temp_vector := rs_2(index*16+31 downto index*16);
+						temp_vector := rs_2(index*32+31 downto index*32);
 					end if;
 					
-					rd(index*16+31 downto index*16) <= temp_vector;
+					rd(index*32+31 downto index*32) <= temp_vector;
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "1000") then
 				--MSGN: multiply sign block
 				for index in 0 to 3 loop
-					if(signed(rs_2(index*16+31 downto index*16)) < 0) then
-						temp_int := to_integer(signed( rs_1(index*16+31 downto index*16) ))*(-1);
-						temp_vector(index*16+31 downto index*16) := std_logic_vector(to_signed(temp_int, 16) );
+					if(signed(rs_2(index*32+31 downto index*32)) < 0) then
+						temp_int := to_integer(signed( rs_1(index*32+31 downto index*32) ))*(-1);
+						temp_vector(index*32+31 downto index*32) := std_logic_vector(to_signed(temp_int, 32) );
 					else
-						temp_vector(index*16+31 downto index*16) := rs_1(index*16+31 downto index*16);
+						temp_vector(index*32+31 downto index*32) := rs_1(index*32+31 downto index*32);
 					end if;
 					
-					rd(index*16+31 downto index*16) <= temp_vector(index*16+31 downto index*16);
+					rd(index*32+31 downto index*32) <= temp_vector(index*32+31 downto index*32);
 				end loop;
 				
 				
@@ -230,7 +232,7 @@ begin
 				for segment in 0 to 7 loop
 					temp_vector := rs_1(segment*16+15 downto segment*16);
 					temp_int := 0;
-					for index in 31 downto 0 loop
+					for index in 15 downto 0 loop
 						exit when temp_vector(index) = '0';
 						temp_int := temp_int + 1;
 					end loop;
@@ -240,32 +242,52 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1010") then
 				--ROT: rotate bits right block
-				temp_int := to_integer(unsigned(rs_2(6 downto 0)));
+				temp_int := to_integer(signed(rs_2(6 downto 0)));
 				temp_vector2 := rs_1;
-				for index in 0 to temp_int loop
-					temp_vector2 := temp_vector2(0) & temp_vector2(127 downto 1);
-				end loop;
+				if(temp_int >= 0) then
+					for index in 0 to temp_int loop
+						temp_vector2 := temp_vector2(0) & temp_vector2(127 downto 1);
+					end loop;
+				else
+					temp_int := temp_int*(-1);
+					for index in 0 to temp_int loop
+						temp_vector2 := temp_vector2(126 downto 0) & temp_vector2(127);
+					end loop;
+				end if;
+				
+				
 				rd <= temp_vector2;
 				
 				
 			elsif(instruction_in(18 downto 15) = "1011") then
 				--ROTW: rotate bits in word block
-				temp_int := to_integer(unsigned(rs_2(5 downto 0)));
+				temp_int := to_integer(signed(rs_2(5 downto 0)));
 				for index in 0 to 3 loop
 					temp_vector := rs_1(index*32+31 downto index*32);
-					for rot in 0 to temp_int loop
-						temp_vector := temp_vector(0) & temp_vector(31 downto 1);
-					end loop;
+					if(temp_int >= 0) then
+						for rot in 0 to temp_int loop
+							temp_vector := temp_vector(0) & temp_vector(31 downto 1);
+						end loop;
+					else
+						temp_int := temp_int*(-1);
+						for rot in 0 to temp_int loop
+							temp_vector := temp_vector(30 downto 0) & temp_vector(31);
+						end loop;
+					end if;
+					
+					
 					rd(index*32+31 downto index*32) <= temp_vector;
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "1100") then
+					--can the immediate value be negative?
+					--what does it mean for the immediate value to be coming from the instruction? 
 				--SHLHI: shift left halfword immediate block
 				temp_int := to_integer(unsigned(rs_2(4 downto 0)));
 				for index in 0 to 7 loop
 					temp_vector3 := rs_1(index*16+15 downto index*16);
-					for	rot in 0 to temp_int loop
+					for	shft in 0 to temp_int loop
 						temp_vector3 := temp_vector3(14 downto 0) & '0';
 					end loop;
 					rd(index*16+15 downto index*16) <= temp_vector3;
@@ -274,6 +296,12 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1101") then
 				--SFH: subtract from halfword block
+				for index in 0 to 7 loop
+					temp_int := to_integer(unsigned(rs_2(index*16+15 downto index*16))) - to_integer(unsigned(rs_1(index*16+15 downto index*16)));
+					if(temp_int < 0) then
+						temp_int := 32768 - temp_int;
+					end if;
+				end loop;
 				
 			elsif(instruction_in(18 downto 15) = "1110") then
 				--SFHS: subtract from halfword saturated block
@@ -281,6 +309,8 @@ begin
 					temp_int := to_integer(signed(rs_2(index*16+15 downto index*16))) - to_integer(signed(rs_1(index*16+15 downto index*16)));
 					if(temp_int < -32768) then
 						temp_int :=	-32768;
+					elsif(temp_int > 32767) then
+						temp_int := 32767;
 					end if;
 					rd(index*16+15 downto index*16) <= std_logic_vector(to_signed(temp_int, 16));
 				end loop;
