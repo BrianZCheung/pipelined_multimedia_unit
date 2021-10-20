@@ -36,10 +36,10 @@ begin
 	
 	variable result: std_logic_vector(127 downto 0); 
 	
-	--variables used 4.2 and 4.3
+	--variables used in 4.3
 	variable temp_int: integer;	
-	
-	--variables used in 4.3	 
+	variable temp_signed: signed(127 downto 0);
+	variable temp_unsigned: unsigned(127 downto 0);
 	variable temp_vector: std_logic_vector(31 downto 0);
 	variable temp_vector2: std_logic_vector(127 downto 0);
 	variable temp_vector3: std_logic_vector(15 downto 0);
@@ -191,24 +191,26 @@ begin
 			elsif(instruction_in(18 downto 15) = "0001") then
 				--AH: add halfword block
 				for index in 0 to 7 loop
-					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
-					if(temp_int > 65535) then
-						temp_int := temp_int - 65535;
+					temp_unsigned(127 downto 0) := to_unsigned(0, 128);
+					temp_unsigned := unsigned(rs_1(16*index+15 downto index*16)) + unsigned(rs_2(16*index+15 downto index*16));
+					if(temp_unsigned > 65535) then
+						temp_unsigned := temp_unsigned - 65535;
 					end if;
-					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
+					rd(16*index+15 downto index*16) <= std_logic_vector(temp_unsigned(15 downto 0));
 				end loop;
 			
 				
 			elsif(instruction_in(18 downto 15) = "0010") then
 				--AHS: add halfword saturated block
 				for index in 0 to 7 loop
-					temp_int := to_integer(signed(rs_1(16*index+15 downto index*16))) + to_integer(signed(rs_2(16*index+15 downto index*16)));
-					if(temp_int > 32767) then
-						temp_int := 32767;
-					elsif(temp_int < -32768) then
-						temp_int := -32768;
+					temp_signed(127 downto 0) := to_signed(0, 128);
+					temp_signed := signed(rs_1(16*index+15 downto index*16)) + signed(rs_2(16*index+15 downto index*16));
+					if(temp_signed > 32767) then
+						temp_signed(15 downto 0) := to_signed(32767, 16);
+					elsif(temp_signed < -32768) then
+						temp_signed(15 downto 0) := to_signed(-32768, 16);
 					end if;
-					rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(temp_int,16));
+					rd(16*index+15 downto index*16) <= std_logic_vector(temp_signed(15 downto 0));
 				end loop;
 				
 				
@@ -223,8 +225,9 @@ begin
 			elsif(instruction_in(18 downto 15) = "0100") then
 				--CGH: carry generate halfword block
 				for index in 0 to 7 loop
-					temp_int := to_integer(unsigned(rs_1(16*index+15 downto index*16))) + to_integer(unsigned(rs_2(16*index+15 downto index*16)));
-					if(temp_int > 32767) then
+					temp_unsigned := to_unsigned(0, 128);
+					temp_unsigned := unsigned(rs_1(16*index+15 downto index*16)) + unsigned(rs_2(16*index+15 downto index*16));
+					if(temp_unsigned > 32767) then
 						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(1,16));
 					else
 						rd(16*index+15 downto index*16) <= std_logic_vector(to_unsigned(0,16));
@@ -236,13 +239,13 @@ begin
 			elsif(instruction_in(18 downto 15) = "0101") then
 				--CLZ: count leading zeros in word block
 				for segment in 0 to 3 loop
+					temp_unsigned(127 downto 0) := to_unsigned(0, 128);
 					temp_vector := rs_1(segment*32+31 downto segment*32);
-					temp_int := 0;
 					for index in 31 downto 0 loop
 						exit when temp_vector(index) = '1';
-						temp_int := temp_int + 1;
+						temp_unsigned := temp_unsigned + 1;
 					end loop;
-					rd(segment*32+31 downto segment*32) <= std_logic_vector(to_unsigned(temp_int, 32));
+					rd(segment*32+31 downto segment*32) <= std_logic_vector(temp_unsigned(31 downto 0));
 				end loop;
 				
 				
@@ -275,9 +278,10 @@ begin
 			elsif(instruction_in(18 downto 15) = "1000") then
 				--MSGN: multiply sign block
 				for index in 0 to 3 loop
+					temp_signed(127 downto 0) := to_signed(0, 128);
 					if(signed(rs_2(index*32+31 downto index*32)) < 0) then
-						temp_int := to_integer(signed( rs_1(index*32+31 downto index*32) ))*(-1);
-						temp_vector(index*32+31 downto index*32) := std_logic_vector(to_signed(temp_int, 32) );
+						temp_signed(31 downto 0) := signed( rs_1(index*32+31 downto index*32) )*(-1);
+						temp_vector(index*32+31 downto index*32) := std_logic_vector(temp_signed(31 downto 0));
 					else
 						temp_vector(index*32+31 downto index*32) := rs_1(index*32+31 downto index*32);
 					end if;
@@ -288,14 +292,15 @@ begin
 				
 			elsif(instruction_in(18 downto 15) = "1001") then
 				--POPCNTH: count ones in halfwords block
+				temp_unsigned(127 downto 0) := to_unsigned(0, 128);
 				for segment in 0 to 7 loop
 					temp_vector := rs_1(segment*16+15 downto segment*16);
-					temp_int := 0;
+					temp_unsigned(127 downto 0) := to_unsigned(0, 128);
 					for index in 15 downto 0 loop
 						exit when temp_vector(index) = '0';
-						temp_int := temp_int + 1;
+						temp_unsigned := temp_unsigned + 1;
 					end loop;
-					rd(segment*16+15 downto segment*16) <= std_logic_vector(to_unsigned(temp_int, 16));
+					rd(segment*16+15 downto segment*16) <= std_logic_vector(temp_unsigned(15 downto 0));
 				end loop;
 				
 				
@@ -346,32 +351,40 @@ begin
 				temp_int := to_integer(unsigned(rs_2(4 downto 0)));
 				for index in 0 to 7 loop
 					temp_vector3 := rs_1(index*16+15 downto index*16);
-					for	shft in 0 to temp_int loop
-						temp_vector3 := temp_vector3(14 downto 0) & '0';
-					end loop;
+					if(temp_int >= 0) then
+						for	shft in 0 to temp_int loop
+							temp_vector3 := temp_vector3(14 downto 0) & '0';
+						end loop;
+					else
+						temp_int := temp_int*(-1);
+						for	shft in 0 to temp_int loop
+							temp_vector3 := temp_vector3(14 downto 0) & '0';
+						end loop;
+					end if;
 					rd(index*16+15 downto index*16) <= temp_vector3;
 				end loop;
 				
 				
 			elsif(instruction_in(18 downto 15) = "1101") then
 				--SFH: subtract from halfword block
+				temp_unsigned(127 downto 0) := to_unsigned(0, 128);
 				for index in 0 to 7 loop
-					temp_int := to_integer(unsigned(rs_2(index*16+15 downto index*16))) - to_integer(unsigned(rs_1(index*16+15 downto index*16)));
-					if(temp_int < 0) then
-						temp_int := 32768 - temp_int;
-					end if;
+					temp_unsigned(127 downto 0) := to_unsigned(0, 128);
+					temp_unsigned := unsigned(rs_2(index*16+15 downto index*16)) - unsigned(rs_1(index*16+15 downto index*16));
+					rd(index*16+15 downto index*16) <= std_logic_vector(temp_unsigned(15 downto 0));
 				end loop;
 				
 			elsif(instruction_in(18 downto 15) = "1110") then
 				--SFHS: subtract from halfword saturated block
+				temp_signed(127 downto 0) := to_signed(0, 128);
 				for index in 0 to 7 loop
-					temp_int := to_integer(signed(rs_2(index*16+15 downto index*16))) - to_integer(signed(rs_1(index*16+15 downto index*16)));
-					if(temp_int < -32768) then
-						temp_int :=	-32768;
-					elsif(temp_int > 32767) then
-						temp_int := 32767;
+					temp_signed := signed(rs_2(index*16+15 downto index*16)) - signed(rs_1(index*16+15 downto index*16));
+					if(temp_signed < -32768) then
+						temp_signed :=	to_signed(-32768, 128);
+					elsif(temp_signed > 32767) then
+						temp_signed := to_signed(32767, 128);
 					end if;
-					rd(index*16+15 downto index*16) <= std_logic_vector(to_signed(temp_int, 16));
+					rd(index*16+15 downto index*16) <= std_logic_vector(temp_signed(15 downto 0));
 				end loop;
 				
 				

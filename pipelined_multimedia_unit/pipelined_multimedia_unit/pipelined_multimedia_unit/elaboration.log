@@ -1,4 +1,4 @@
-Active-HDL 11.1.262.7351 2021-10-20 01:15:54
+Active-HDL 11.1.262.7351 2021-10-20 15:52:26
 
 Elaboration top modules:
 Architecture                  tb_architecture(alu_tb)
@@ -7,8 +7,8 @@ Architecture                  tb_architecture(alu_tb)
 --------------------------------------------------------------------------------------------------------------
 Entity   | Architecture    | Library                   | Info | Compiler Version        | Compilation Options
 --------------------------------------------------------------------------------------------------------------
-alu_tb   | tb_architecture | pipelined_multimedia_unit |      | 11.1.262.7351 (Windows) | -dbg -2008
-alu      | alu_arch        | pipelined_multimedia_unit |      | 11.1.262.7351 (Windows) | -dbg -2008
+alu_tb   | tb_architecture | pipelined_multimedia_unit |      | 11.1.262.7351 (Windows) | -O3
+alu      | alu_arch        | pipelined_multimedia_unit |      | 11.1.262.7351 (Windows) | -O3
 --------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------

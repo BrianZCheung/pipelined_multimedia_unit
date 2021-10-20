@@ -34,7 +34,7 @@ fileopenfolder=C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimed
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=alu|alu_arch|0 alu_tb|tb_architecture|0 
+HierarchyInformation=alu_tb|tb_architecture|0  
 ShowHide=ShowTopLevel
 Selected=
 

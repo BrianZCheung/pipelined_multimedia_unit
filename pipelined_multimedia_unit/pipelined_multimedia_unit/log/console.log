@@ -1,120 +1,105 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
-acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
-# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
 # Compile Entity "alu"
 # Compile Architecture "alu_arch" of Entity "alu"
-# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
 # Compile Entity "alu_tb"
 # Compile Architecture "tb_architecture" of Entity "alu_tb"
-# Compile success 0 Errors 0 Warnings  Analysis time :  63.0 [ms]
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-asim -O5 +access +r +m+alu_tb alu_tb tb_architecture
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
-# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.2 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
 # Compile Entity "alu"
 # Compile Architecture "alu_arch" of Entity "alu"
-# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# KERNEL: PLI/VHPI kernel's engine initialization done.
-# PLI: Loading library 'C:\Aldec\Active-HDL-Student-Edition\bin\systf.dll'
-# VHPI: Loading library 'systf.dll'
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
-# SLP: Finished : 0.0 [s]
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 6247 kB (elbread=1280 elab2=4818 kernel=148 sdf=0)
-# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
-#  1:13 AM, Wednesday, October 20, 2021
-#  Simulation has been initialized
-endsim
-# VSIM: Simulation has finished.
-asim -O5 +access +r +m+alu_tb alu_tb tb_architecture
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# VSIM: Stack memory: 32MB
-# VSIM: Retval memory: 32MB
-# 
-acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
-# File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Error: COMP96_0117: alu.vhd : (38, 24): Array type for "temp_signed" is not constrained.
+# Error: COMP96_0117: alu.vhd : (39, 26): Array type for "temp_unsigned" is not constrained.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 2 Errors 0 Warnings  Analysis time :  79.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
 # Compile Entity "alu"
 # Compile Architecture "alu_arch" of Entity "alu"
-# Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# KERNEL: PLI/VHPI kernel's engine initialization done.
-# PLI: Loading library 'C:\Aldec\Active-HDL-Student-Edition\bin\systf.dll'
-# VHPI: Loading library 'systf.dll'
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
-# SLP: Finished : 0.0 [s]
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 6247 kB (elbread=1280 elab2=4818 kernel=148 sdf=0)
-# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
-#  1:15 AM, Wednesday, October 20, 2021
-#  Simulation has been initialized
-run 500ns
-# RUNTIME: Info: RUNTIME_0142 alu_tb.vhd (43): finish called.
-# KERNEL: Time: 300 ns,  Iteration: 0,  Instance: /alu_tb,  Process: stimlus.
-# KERNEL: stopped at time: 300 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
-# 6 signal(s) traced.
-# Waveform file 'untitled.awc' connected to 'C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/wave.asdb'.
-restart
-# ELBREAD: Elaboration process.
-# ELBREAD: Elaboration time 0.0 [s].
-# 
-# KERNEL: Main thread initiated.
-# KERNEL: Kernel process initialization phase.
-# ELAB2: Elaboration final pass...
-# KERNEL: PLI/VHPI kernel's engine initialization done.
-# PLI: Loading library 'C:\Aldec\Active-HDL-Student-Edition\bin\systf.dll'
-# VHPI: Loading library 'systf.dll'
-# ELAB2: Create instances ...
-# KERNEL: Time resolution set to 1ps.
-# ELAB2: Create instances complete.
-# SLP: Started
-# SLP: Elaboration phase ...
-# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
-# SLP: Finished : 0.0 [s]
-# ELAB2: Elaboration final pass complete - time: 0.0 [s].
-# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
-# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
-# KERNEL: Kernel process initialization done.
-# Allocation: Simulator allocated 6247 kB (elbread=1280 elab2=4818 kernel=148 sdf=0)
-# KERNEL: ASDB file was created in location C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
-#  1:15 AM, Wednesday, October 20, 2021
-#  Simulation has been initialized
-# Waveform file 'untitled.awc' connected to 'C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/wave.asdb'.
-run 500ns
-# RUNTIME: Info: RUNTIME_0142 alu_tb.vhd (43): finish called.
-# KERNEL: Time: 300 ns,  Iteration: 0,  Instance: /alu_tb,  Process: stimlus.
-# KERNEL: stopped at time: 300 ns
-# VSIM: Simulation has finished. There are no more test vectors to simulate.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0077: alu.vhd : (179, 22): Undefined type of expression. Expected type 'SIGNED'.
+# Error: COMP96_0617: alu.vhd : (181, 22): Assignment target incompatible with right side. Cannot convert 'UNIVERSAL_INTEGER' to 'SIGNED'.
+# Error: COMP96_0077: alu.vhd : (212, 23): Undefined type of expression. Expected type 'UNSIGNED'.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 3 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0077: alu.vhd : (212, 23): Undefined type of expression. Expected type 'UNSIGNED'.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 1 Errors 0 Warnings  Analysis time :  78.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Warning: COMP96_0367: alu.vhd : (212, 23): Improper array length (32). Expected length is 128.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 1 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0077: alu.vhd : (267, 36): Undefined type of expression. Expected type 'UNSIGNED'.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 1 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of
