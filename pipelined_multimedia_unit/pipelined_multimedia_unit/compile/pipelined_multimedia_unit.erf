@@ -1,4 +1,13 @@
 MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd" 
+BEGINPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+UPDATEPROGRESS 1
 MESSAGE "Compile Entity "alu"" 
+UPDATEPROGRESS 3
+UPDATEPROGRESS 4
 MESSAGE "Compile Architecture "alu_arch" of Entity "alu"" 
-SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]" 
+UPDATEPROGRESS 12
+UPDATEPROGRESS 39
+UPDATEPROGRESS 99
+UPDATEPROGRESS 100
+ENDPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  47.0 [ms]" 
