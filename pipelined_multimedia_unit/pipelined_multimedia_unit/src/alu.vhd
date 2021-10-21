@@ -44,7 +44,6 @@ begin
 	variable temp_vector2: std_logic_vector(127 downto 0);
 	variable temp_vector3: std_logic_vector(15 downto 0);
 	begin 				 
-		report to_string(longMax);
 		--4.1 instructions	 
 		--Load Immediate
 		if(instruction_in(24) = '0') then	  	
