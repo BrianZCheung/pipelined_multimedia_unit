@@ -113,7 +113,11 @@ I 000049 55 784           1633738322988 alu_arch
 	)
 	(_model . alu_arch 3 -1)
 )
+<<<<<<< HEAD
 I 000049 55 1028          1633738331076 alu_arch
+=======
+V 000049 55 1028          1633738331076 alu_arch
+>>>>>>> main
 (_unit VHDL(alu 0 13(alu_arch 0 23))
 	(_version ve4)
 	(_time 1633738331077 2021.10.08 20:12:11)
@@ -146,6 +150,7 @@ I 000049 55 1028          1633738331076 alu_arch
 	)
 	(_model . alu_arch 3 -1)
 )
+<<<<<<< HEAD
 I 000049 55 2941          1634706541537 alu_arch
 (_unit VHDL(alu 0 13(alu_arch 0 23))
 	(_version ve4)
@@ -2681,3 +2686,5 @@ V 000056 55 1449          1634767448472 tb_architecture
 	)
 	(_model . tb_architecture 1 -1)
 )
+=======
+>>>>>>> main
