@@ -1,3 +1,12 @@
+--
+-- Entity Name : alu_tb
+-- Entity Description: testbench for our alu
+-- Architecture Name : tb_architecture
+-- Description :	   
+-- 
+-- Authored by : Brian Cheung and Ryuichi Lin
+-- 
+
 library ieee;
 use ieee.std_logic_1164.all;   
 use ieee.numeric_std.all;

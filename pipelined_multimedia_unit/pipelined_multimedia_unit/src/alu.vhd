@@ -286,6 +286,8 @@ begin
 						else
 							temp_signed := resize( signed(rs_1(index*32+31 downto index*32)) *(-1), temp_signed'length);
 						end if;
+					elsif(signed(rs_2(index*32+31 downto index*32)) = 0) then
+						temp_signed := to_signed(0, temp_signed'length);	
 					else
 						temp_signed := resize( signed(rs_1(index*32+31 downto index*32)), temp_signed'length);
 					end if;
