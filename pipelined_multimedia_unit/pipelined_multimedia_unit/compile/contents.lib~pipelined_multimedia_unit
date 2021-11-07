@@ -1,11 +1,5 @@
-<<<<<<< HEAD
-34
+2
 ~E 1 "../src/alu.vhd" 13 alu
 ~A 1 "../src/alu.vhd" 23 alu_arch
-~E 1 "../src/alu_tb.vhd" 7 alu_tb
-~A 1 "../src/alu_tb.vhd" 10 tb_architecture
-=======
-6
-~E 1 "../src/alu.vhd" 13 alu
-~A 1 "../src/alu.vhd" 23 alu_arch
->>>>>>> main
+~E 1 "../src/alu_tb.vhd" 16 alu_tb
+~A 1 "../src/alu_tb.vhd" 19 tb_architecture
