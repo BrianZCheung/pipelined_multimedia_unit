@@ -1,4 +1,23 @@
+<<<<<<< HEAD
+WARNING DAGGEN_0523: "The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available."
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+UPDATEPROGRESS 1
+MESSAGE "Compile Entity "alu"" 
+UPDATEPROGRESS 3
+MESSAGE "Compile Architecture "alu_arch" of Entity "alu"" 
+UPDATEPROGRESS 12
+UPDATEPROGRESS 45
+UPDATEPROGRESS 99
+UPDATEPROGRESS 100
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd" 
+MESSAGE "Compile Entity "alu_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "alu_tb"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]" 
+=======
 MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd" 
 MESSAGE "Compile Entity "alu"" 
 MESSAGE "Compile Architecture "alu_arch" of Entity "alu"" 
 SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  16.0 [ms]" 
+>>>>>>> main

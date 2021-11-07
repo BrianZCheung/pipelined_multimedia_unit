@@ -3,6 +3,19 @@ Current Flow=Generic
 VCS=0
 version=4
 Current Config=compile
+<<<<<<< HEAD
+
+[Configurations]
+compile=pipelined_multimedia_unit
+
+[Library]
+pipelined_multimedia_unit=.\pipelined_multimedia_unit\pipelined_multimedia_unit.lib
+
+[$LibMap$]
+pipelined_multimedia_unit=.
+Active_lib=
+
+=======
 [Configurations]
 compile=pipelined_multimedia_unit
 [Library]
@@ -10,12 +23,33 @@ pipelined_multimedia_unit=.\pipelined_multimedia_unit\pipelined_multimedia_unit.
 [$LibMap$]
 pipelined_multimedia_unit=.
 Active_lib=
+>>>>>>> main
 [Settings]
 FLOW_TYPE=HDL
 LANGUAGE=VHDL
 REFRESH_FLOW=1
 FLOWTOOLS=NONE
 FAMILY=
+<<<<<<< HEAD
+fileopenfolder=C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src
+
+[Files]
+/alu.vhd=-1
+/alu_tb.vhd=-1
+
+[Files.Data]
+.\src\alu.vhd=VHDL Source Code
+.\src\alu_tb.vhd=VHDL Source Code
+
+[SpecTracer]
+WindowVisible=0
+
+[HierarchyViewer]
+HierarchyInformation=alu_tb|tb_architecture|0    
+ShowHide=ShowTopLevel
+Selected=
+
+=======
 [Files]
 /alu.vhd=-1
 [Files.Data]
@@ -26,3 +60,4 @@ WindowVisible=0
 HierarchyInformation=alu|alu_arch|0  
 ShowHide=ShowTopLevel
 Selected=
+>>>>>>> main

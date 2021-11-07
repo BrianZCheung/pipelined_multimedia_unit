@@ -1,5 +1,416 @@
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
+<<<<<<< HEAD
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0078: alu.vhd : (47, 10): Unknown identifier "to_string".
+# Error: COMP96_0133: alu.vhd : (47, 10): Cannot find object declaration.
+# Error: COMP96_0289: alu.vhd : (47, 10): Prefix of index must be an array.
+# Error: COMP96_0086: alu.vhd : (47, 10): String expected.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 4 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0078: alu.vhd : (47, 10): Unknown identifier "to_string".
+# Error: COMP96_0133: alu.vhd : (47, 10): Cannot find object declaration.
+# Error: COMP96_0289: alu.vhd : (47, 10): Prefix of index must be an array.
+# Error: COMP96_0086: alu.vhd : (47, 10): String expected.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 4 Errors 0 Warnings  Analysis time :  63.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0078: alu.vhd : (194, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (194, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (195, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (195, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (196, 9): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (196, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (196, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (197, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (197, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (197, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (199, 58): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (199, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (199, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (206, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (206, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (207, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (207, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (208, 9): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (208, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (208, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (209, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (209, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (210, 12): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (210, 12): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (210, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (211, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (211, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (213, 58): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (213, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (213, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (228, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (228, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (229, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (229, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (230, 9): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (230, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (230, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (242, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (242, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (246, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (248, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (248, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (248, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (281, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (281, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (283, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (283, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (284, 68): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (284, 68): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (284, 68): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (295, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (295, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (298, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (298, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (301, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (303, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (303, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (303, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (370, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (370, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (372, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (372, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (373, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (373, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (374, 58): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (374, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (374, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (379, 5): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (379, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (381, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (381, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (382, 9): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (382, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (382, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (383, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (383, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (384, 12): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (384, 12): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (384, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (385, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (385, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (387, 58): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (387, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (387, 58): Explicit type conversions are allowed between closely related types only.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 88 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0664: alu.vhd : (194, 19): Value 127 out of range 63 downto 0.
+# Error: COMP96_0617: alu.vhd : (194, 36): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (195, 22): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (196, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (196, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (197, 23): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (197, 23): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (197, 23): Undefined type of expression. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0664: alu.vhd : (206, 19): Value 127 out of range 63 downto 0.
+# Error: COMP96_0617: alu.vhd : (206, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (207, 22): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (208, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (208, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (209, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0753: alu.vhd : (210, 27): Cannot find the "<" operator with operands denoted with the "[STD_LOGIC_VECTOR, UNIVERSAL_INTEGER]" signature.
+# Error: COMP96_0077: alu.vhd : (210, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (211, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: alu.vhd : (228, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (228, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (229, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (229, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (230, 9): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (230, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (230, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (242, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (242, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (246, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (248, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (248, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (248, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (281, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (281, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (283, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (283, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (284, 68): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (284, 68): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (284, 68): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (295, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (295, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (298, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (298, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (301, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (303, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (303, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (303, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (370, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (370, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (372, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (372, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (373, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (373, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (374, 58): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (374, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (374, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (379, 5): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (379, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (381, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (381, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (382, 9): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (382, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (382, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (383, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (383, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (384, 12): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (384, 12): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (384, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (385, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (385, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (387, 58): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (387, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (387, 58): Explicit type conversions are allowed between closely related types only.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 75 Errors 0 Warnings  Analysis time :  93.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0617: alu.vhd : (194, 35): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (195, 22): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (196, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (196, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (197, 23): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (197, 23): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (197, 23): Undefined type of expression. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0664: alu.vhd : (206, 19): Value 127 out of range 63 downto 0.
+# Error: COMP96_0617: alu.vhd : (206, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (207, 22): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (208, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (208, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (209, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0753: alu.vhd : (210, 27): Cannot find the "<" operator with operands denoted with the "[STD_LOGIC_VECTOR, UNIVERSAL_INTEGER]" signature.
+# Error: COMP96_0077: alu.vhd : (210, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (211, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: alu.vhd : (228, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (228, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (229, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (229, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (230, 9): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (230, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (230, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (242, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (242, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (246, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (248, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (248, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (248, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (281, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (281, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (283, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (283, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (284, 68): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (284, 68): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (284, 68): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (295, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (295, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (298, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (298, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (301, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (303, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (303, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (303, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (370, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (370, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (372, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (372, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (373, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (373, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (374, 58): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (374, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (374, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (379, 5): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (379, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (381, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (381, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (382, 9): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (382, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (382, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (383, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (383, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (384, 12): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (384, 12): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (384, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (385, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (385, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (387, 58): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (387, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (387, 58): Explicit type conversions are allowed between closely related types only.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 74 Errors 0 Warnings  Analysis time :  94.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# Error: COMP96_0617: alu.vhd : (194, 35): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (195, 22): Assignment target incompatible with right side. Cannot convert 'UNSIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (196, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (196, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (197, 23): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (197, 23): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (197, 23): Undefined type of expression. Expected type 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0664: alu.vhd : (206, 19): Value 127 out of range 63 downto 0.
+# Error: COMP96_0617: alu.vhd : (206, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0617: alu.vhd : (207, 22): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0071: alu.vhd : (208, 24): Operator ">" is not defined for such operands.
+# Error: COMP96_0077: alu.vhd : (208, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (209, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0753: alu.vhd : (210, 27): Cannot find the "<" operator with operands denoted with the "[STD_LOGIC_VECTOR, UNIVERSAL_INTEGER]" signature.
+# Error: COMP96_0077: alu.vhd : (210, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0617: alu.vhd : (211, 36): Assignment target incompatible with right side. Cannot convert 'SIGNED' to 'STD_LOGIC_VECTOR'.
+# Error: COMP96_0078: alu.vhd : (228, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (228, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (229, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (229, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (230, 9): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (230, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (230, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (242, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (242, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (246, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (246, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (248, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (248, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (248, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (281, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (281, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (283, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (283, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (284, 68): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (284, 68): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (284, 68): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (295, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (295, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (298, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (298, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 7): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (301, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (301, 24): Unknown identifier "temp_unsigned".
+# Error: COMP96_0078: alu.vhd : (303, 62): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (303, 62): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (303, 62): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (370, 5): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (370, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (372, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (372, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (373, 6): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (373, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (374, 58): Unknown identifier "temp_unsigned".
+# Error: COMP96_0133: alu.vhd : (374, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (374, 58): Explicit type conversions are allowed between closely related types only.
+# Error: COMP96_0078: alu.vhd : (379, 5): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (379, 5): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (381, 6): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (381, 6): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (382, 9): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (382, 9): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (382, 8): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (383, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (383, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (384, 12): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (384, 12): Cannot find object declaration.
+# Error: COMP96_0077: alu.vhd : (384, 11): Undefined type of expression. Expected type 'BOOLEAN'.
+# Error: COMP96_0078: alu.vhd : (385, 7): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (385, 7): Cannot find object declaration.
+# Error: COMP96_0078: alu.vhd : (387, 58): Unknown identifier "temp_signed".
+# Error: COMP96_0133: alu.vhd : (387, 58): Cannot find object declaration.
+# Error: COMP96_0149: alu.vhd : (387, 58): Explicit type conversions are allowed between closely related types only.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile failure 74 Errors 0 Warnings  Analysis time :  79.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  93.0 [ms]
+acom -O3 -e 100 -work pipelined_multimedia_unit -2002  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd
+# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+# Compile Entity "alu"
+# Compile Architecture "alu_arch" of Entity "alu"
+# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+# Compile Entity "alu_tb"
+# Compile Architecture "tb_architecture" of Entity "alu_tb"
+# Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]
+=======
 asim -O5 +access +r +m+alu alu alu_arch
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
@@ -104,3 +515,4 @@ acom -dbg -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd
 #  Simulation has been initialized
 endsim
 # VSIM: Simulation has finished.
+>>>>>>> main

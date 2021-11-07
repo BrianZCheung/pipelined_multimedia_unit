@@ -1,1 +1,5 @@
 .\src\alu.vhd
+<<<<<<< HEAD
+.\src\alu_tb.vhd
+=======
+>>>>>>> main
