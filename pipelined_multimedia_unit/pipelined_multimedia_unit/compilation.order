@@ -1,2 +1,4 @@
 .\src\alu.vhd
 .\src\alu_tb.vhd
+.\src\stage3.vhd
+.\src\forwarding_mux.vhd
