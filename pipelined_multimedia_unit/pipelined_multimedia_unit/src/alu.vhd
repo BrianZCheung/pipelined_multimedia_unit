@@ -53,7 +53,9 @@ begin
 
 		--4.1 instructions	 
 		--Load Immediate
-		if(instruction_in(24) = '0') then	  	
+		if(instruction_in(24) = '0') then	
+			--assumes rs1 to be rd	 
+			result := rs_1;
 			result(((16*to_integer(unsigned(instruction_in(23 downto 21))))+15) downto (16*to_integer(unsigned(instruction_in(23 downto 21))))) := instruction_in(20 downto 5);
 			--rd gets the results of the 4.2 instructions into
 			rd <= result;
