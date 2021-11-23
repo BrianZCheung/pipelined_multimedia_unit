@@ -3,3 +3,13 @@ i<>.\src\alu.vhd
 i<>.\src\alu_tb.vhd
 =======
 >>>>>>> main
+i<>.\src\ID_Reg.vhd
+i<>.\src\ID_Reg_tb.vhd
+i<>.\src\IF_Stage.vhd
+i<>.\src\forwarding_mux.vhd
+i<>.\src\stage3.vhd
+i<>.\src\pipelined_multimedia_unit.vhd
+i<>.\src\IF_ID_Reg.vhd
+i<>.\src\IF_ID_Reg_tb.vhd
+i<>.\src\ID_EX_Reg.vhd
+i<>.\src\EX_WB_Reg.vhd

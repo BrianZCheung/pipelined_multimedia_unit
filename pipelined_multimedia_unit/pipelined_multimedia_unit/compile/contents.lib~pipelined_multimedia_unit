@@ -1,9 +1,35 @@
-17
+65
 ~E 1 "../src/alu.vhd" 13 alu
 ~A 1 "../src/alu.vhd" 24 alu_arch
 ~E 1 "../src/alu_tb.vhd" 16 alu_tb
 ~A 1 "../src/alu_tb.vhd" 19 tb_architecture
+~E 1 "../src/EX_stage.vhd" 15 EX_stage
+~A 1 "../src/EX_stage.vhd" 33 EX_stage_arch
+~E 1 "../src/EX_WB_Reg.vhd" 15 EX_WB_Reg
+~A 1 "../src/EX_WB_Reg.vhd" 27 EX_WB_Reg_arch
 ~E 1 "../src/forwarding_mux.vhd" 13 forwarding_mux
 ~A 1 "../src/forwarding_mux.vhd" 31 forwarding_mux_arch
+~E 1 "../src/ID_EX_Reg.vhd" 15 ID_EX_Reg
+~A 1 "../src/ID_EX_Reg.vhd" 29 ID_EX_Reg_arch
+~E 1 "../src/ID_EX_Reg_tb.vhd" 16 ID_EX_Reg_tb
+~A 1 "../src/ID_EX_Reg_tb.vhd" 19 tb_architecture
+~E 1 "../src/ID_Reg.vhd" 13 ID_Reg
+~A 1 "../src/ID_stage.vhd" 24 ID_Reg_arch
+~E 1 "../src/ID_Reg_tb.vhd" 16 ID_Reg_tb
+~A 1 "../src/ID_Reg_tb.vhd" 19 tb_architecture
+~E 1 "../src/ID_stage.vhd" 13 ID_stage
+~A 1 "../src/ID_stage.vhd" 24 ID_stage_arch
+~E 1 "../src/ID_Reg_tb.vhd" 16 ID_stage_tb
+~A 1 "../src/ID_stage_tb.vhd" 19 tb_architecture
+~E 1 "../src/IF_ID_Reg.vhd" 15 IF_ID_Reg
+~A 1 "../src/IF_ID_Reg.vhd" 23 IF_ID_Reg_arch
+~E 1 "../src/IF_ID_Reg_tb.vhd" 16 IF_ID_Reg_tb
+~A 1 "../src/IF_ID_Reg_tb.vhd" 19 tb_architecture
+~E 1 "../src/IF_ID_Reg.vhd" 15 IF_ID_stage
+~A 1 "../src/IF_ID_Reg.vhd" 23 IF_ID_stage_arch
+~E 1 "../src/IF_Stage.vhd" 13 IF_stage
+~A 1 "../src/IF_stage.vhd" 20 IF_stage_arch
+~E 1 "../src/pipelined_multimedia_unit.vhd" 15 piplined_multimedia_unit
+~A 1 "../src/pipelined_multimedia_unit.vhd" 24 piplined_multimedia_unit_arch
 ~E 1 "../src/stage3.vhd" 15 stage3
 ~A 1 "../src/stage3.vhd" 33 stage3_arch

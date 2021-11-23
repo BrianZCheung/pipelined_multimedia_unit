@@ -3,7 +3,6 @@ Current Flow=Generic
 VCS=0
 version=4
 Current Config=compile
-<<<<<<< HEAD
 
 [Configurations]
 compile=pipelined_multimedia_unit
@@ -15,23 +14,31 @@ pipelined_multimedia_unit=.\pipelined_multimedia_unit\pipelined_multimedia_unit.
 pipelined_multimedia_unit=.
 Active_lib=
 
-=======
 [Configurations]
 compile=pipelined_multimedia_unit
+
 [Library]
 pipelined_multimedia_unit=.\pipelined_multimedia_unit\pipelined_multimedia_unit.lib
+
 [$LibMap$]
 pipelined_multimedia_unit=.
 Active_lib=
->>>>>>> main
+
 [Settings]
 FLOW_TYPE=HDL
 LANGUAGE=VHDL
 REFRESH_FLOW=1
 FLOWTOOLS=NONE
 FAMILY=
-<<<<<<< HEAD
 fileopenfolder=C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src
+
+[SpecTracer]
+WindowVisible=0
+
+[HierarchyViewer]
+HierarchyInformation=alu_tb|tb_architecture|0 if_id_reg_tb|tb_architecture|0 
+ShowHide=ShowTopLevel
+Selected=
 
 [Files]
 /alu.vhd=-1
@@ -49,19 +56,35 @@ fileopenfolder=C:\Users\MT4T\github\pipelined_multimedia_unit\pipelined_multimed
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=alu_tb|tb_architecture|0          
+HierarchyInformation=alu_tb|tb_architecture|0
 ShowHide=ShowTopLevel
 Selected=
 
-=======
 [Files]
 /alu.vhd=-1
+/alu_tb.vhd=-1
+/ID_stage.vhd=-1
+/ID_stage_tb.vhd=-1
+/IF_stage.vhd=-1
+/forwarding_mux.vhd=-1
+/EX_stage.vhd=-1
+/pipelined_multimedia_unit.vhd=-1
+/IF_ID_Reg.vhd=-1
+/ID_EX_Reg_tb.vhd=-1
+/ID_EX_Reg.vhd=-1
+/EX_WB_Reg.vhd=-1
+
 [Files.Data]
 .\src\alu.vhd=VHDL Source Code
-[SpecTracer]
-WindowVisible=0
-[HierarchyViewer]
-HierarchyInformation=alu|alu_arch|0  
-ShowHide=ShowTopLevel
-Selected=
->>>>>>> main
+.\src\alu_tb.vhd=VHDL Source Code
+.\src\ID_stage.vhd=VHDL Source Code
+.\src\ID_stage_tb.vhd=VHDL Source Code
+.\src\IF_stage.vhd=VHDL Source Code
+.\src\forwarding_mux.vhd=VHDL Source Code
+.\src\EX_stage.vhd=VHDL Source Code
+.\src\pipelined_multimedia_unit.vhd=VHDL Source Code
+.\src\IF_ID_Reg.vhd=VHDL Source Code
+.\src\ID_EX_Reg_tb.vhd=VHDL Source Code
+.\src\ID_EX_Reg.vhd=VHDL Source Code
+.\src\EX_WB_Reg.vhd=VHDL Source Code
+

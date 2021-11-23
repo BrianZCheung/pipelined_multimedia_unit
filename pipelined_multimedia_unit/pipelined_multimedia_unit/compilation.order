@@ -1,4 +1,12 @@
 .\src\alu.vhd
 .\src\alu_tb.vhd
-.\src\stage3.vhd
+.\src\ID_stage.vhd
+.\src\ID_stage_tb.vhd
+.\src\IF_stage.vhd
 .\src\forwarding_mux.vhd
+.\src\EX_stage.vhd
+.\src\pipelined_multimedia_unit.vhd
+.\src\IF_ID_Reg.vhd
+.\src\ID_EX_Reg_tb.vhd
+.\src\ID_EX_Reg.vhd
+.\src\EX_WB_Reg.vhd

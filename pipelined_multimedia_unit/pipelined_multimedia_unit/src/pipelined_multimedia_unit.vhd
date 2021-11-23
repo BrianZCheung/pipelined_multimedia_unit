@@ -140,12 +140,12 @@ begin
 	
 	stage_2: ID_stage
 	port map(
-	i_fetch => IF_ID_Reg_instr,	 
-	i_wb => EX_WB_Reg_instr,
-	rd => EX_WB_Reg_rd,
-	rs_1 =>	ID_stage_rs_1,
-	rs_2 =>	ID_stage_rs_2,
-	rs_3 => ID_stage_rs_3 
+		i_fetch => IF_ID_Reg_instr,	 
+		i_wb => EX_WB_Reg_instr,
+		rd => EX_WB_Reg_rd,
+		rs_1 =>	ID_stage_rs_1,
+		rs_2 =>	ID_stage_rs_2,
+		rs_3 => ID_stage_rs_3 
 	);	
 	
 	stage_2_to_3_reg: IF_ID_Reg
