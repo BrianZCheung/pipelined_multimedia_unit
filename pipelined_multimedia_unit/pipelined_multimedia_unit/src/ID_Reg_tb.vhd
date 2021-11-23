@@ -1,6 +1,6 @@
 --
--- Entity Name : ID_Reg_tb
--- Entity Description: testbench for our ID_Reg stage
+-- Entity Name : ID_stage_tb
+-- Entity Description: testbench for our ID_stage stage
 -- Architecture Name : tb_architecture
 -- Description :	   
 -- 
@@ -13,10 +13,10 @@ use ieee.numeric_std.all;
 library pipelined_multimedia_unit;
 use pipelined_multimedia_unit.all;
 
-entity ID_Reg_tb is
-end ID_Reg_tb;
+entity ID_stage_tb is
+end ID_stage_tb;
 
-architecture tb_architecture of ID_Reg_tb is
+architecture tb_architecture of ID_stage_tb is
 	
 -- stimulus signals 
 signal i_fetch_tb : std_logic_vector(24 downto 0);		 
@@ -32,7 +32,7 @@ signal rs_3_tb : std_logic_vector(127 downto 0);
 begin
 	
 	-- Unit Under Test port map
-	UUT : entity ID_Reg
+	UUT : entity ID_stage
 	port map (
 		i_fetch => i_fetch_tb,
 		i_wb => i_wb_tb,
