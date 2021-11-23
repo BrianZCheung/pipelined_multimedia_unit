@@ -26,12 +26,12 @@ architecture piplined_multimedia_unit_arch of piplined_multimedia_unit is
 --signals for IF stage
 signal pc : std_logic_vector(31 downto 0);
 
-component IF_Stage	   
+component IF_stage	   
 	port(
 		pc : in std_logic_vector(31 downto 0);
 		instruction_out : out std_logic_vector(24 downto 0)-- instruction being executed
 	);
-end component IF_Stage;
+end component IF_stage;
 
 --signals to transfer information to IF/ID register	 
 signal IF_instr : std_logic_vector(24 downto 0);
@@ -47,7 +47,7 @@ end component IF_ID_Reg;
 --signals to transfer information to ID & register fetch stage
 signal IF_ID_Reg_instr : std_logic_vector(24 downto 0);
 
-component ID_Reg	   
+component ID_stage	   
 	port(
 		i_fetch : in std_logic_vector(24 downto 0);-- instruction being executed	
 		i_wb : in std_logic_vector(24 downto 0);-- instruction of the write back data 		 
@@ -56,13 +56,13 @@ component ID_Reg
 		rs_2 : out std_logic_vector(127 downto 0);
 		rs_3 : out std_logic_vector(127 downto 0)	
 	);
-end component ID_Reg;	
+end component ID_stage;	
 
 --signals to transfer information to ID_EX register	  
-signal ID_Reg_instr : std_logic_vector(24 downto 0);
-signal ID_Reg_rs_1 : std_logic_vector(127 downto 0);   
-signal ID_Reg_rs_2 : std_logic_vector(127 downto 0); 
-signal ID_Reg_rs_3 : std_logic_vector(127 downto 0); 
+signal ID_stage_instr : std_logic_vector(24 downto 0);
+signal ID_stage_rs_1 : std_logic_vector(127 downto 0);   
+signal ID_stage_rs_2 : std_logic_vector(127 downto 0); 
+signal ID_stage_rs_3 : std_logic_vector(127 downto 0); 
 
 component ID_EX_Reg
 	port(
@@ -84,26 +84,26 @@ signal ID_EX_Reg_rs_1 : std_logic_vector(127 downto 0);
 signal ID_EX_Reg_rs_2 : std_logic_vector(127 downto 0); 
 signal ID_EX_Reg_rs_3 : std_logic_vector(127 downto 0); 
 
-component stage3	   
+component EX_stage	   
 	port(
 		--inputs for the forwarding_mux entity:
 		instruction_in : in std_logic_vector(24 downto 0);-- instruction being executed		 
 		rs_1 : in std_logic_vector(127 downto 0);   
 		rs_2 : in std_logic_vector(127 downto 0);
 		rs_3 : in std_logic_vector(127 downto 0); 
-		updated_rd_in : in std_logic_vector(127 downto 0);
-		updated_rd_address_in : in std_logic_vector(4 downto 0);
+		rd_in : in std_logic_vector(127 downto 0);
+		rd_address_in : in std_logic_vector(4 downto 0);
 		
 		--outputs from the alu:
-		updated_rd_out : out std_logic_vector(127 downto 0);
-		updated_rd_address_out : out std_logic_vector(4 downto 0) 
+		rd_out : out std_logic_vector(127 downto 0);
+		rd_address_out : out std_logic_vector(4 downto 0) 
 	);
-end component stage3; 	   
+end component EX_stage; 	   
 
 --signals to transfer information to EX_WB register	
---signal stage3_instr : std_logic_vector(24 downto 0);
-signal stage3_rd : std_logic_vector(127 downto 0); 
-signal stage3_rd_address : std_logic_vector(4 downto 0);
+--signal EX_stage_instr : std_logic_vector(24 downto 0);
+signal EX_stage_rd : std_logic_vector(127 downto 0); 
+signal EX_stage_rd_address : std_logic_vector(4 downto 0);
 
 component EX_WB_Reg
 	port(
@@ -125,7 +125,7 @@ signal EX_WB_Reg_rd_address : std_logic_vector(4 downto 0);
 
 begin
 
-	stage_1: IF_Stage
+	stage_1: IF_stage
 	port map(
 		pc => pc,
 		instruction_out => 	IF_instr
@@ -138,14 +138,14 @@ begin
 		instruction_out => IF_ID_Reg_instr
 	);
 	
-	stage_2: ID_Reg
+	stage_2: ID_stage
 	port map(
 	i_fetch => IF_ID_Reg_instr,	 
 	i_wb => EX_WB_Reg_instr,
 	rd => EX_WB_Reg_rd,
-	rs_1 =>	ID_Reg_rs_1,
-	rs_2 =>	ID_Reg_rs_2,
-	rs_3 => ID_Reg_rs_3 
+	rs_1 =>	ID_stage_rs_1,
+	rs_2 =>	ID_stage_rs_2,
+	rs_3 => ID_stage_rs_3 
 	);	
 	
 	stage_2_to_3_reg: IF_ID_Reg
@@ -155,23 +155,23 @@ begin
 		instruction_out => ID_EX_Reg_instr
 	);
 	
-	stage_3: stage3
+	stage_3: EX_stage
 	port map(
 		instruction_in => ID_EX_Reg_instr,
 		rs_1 => ID_EX_Reg_rs_1,	   
 		rs_2 => ID_EX_Reg_rs_2,
 		rs_3 => ID_EX_Reg_rs_3,	 
-		updated_rd_in => EX_WB_Reg_rd,
-		updated_rd_address_in => EX_WB_Reg_rd_address,
-		updated_rd_out => stage3_rd,
-		updated_rd_address_out => stage3_rd_address
+		rd_in => EX_WB_Reg_rd,
+		rd_address_in => EX_WB_Reg_rd_address,
+		rd_out => EX_stage_rd,
+		rd_address_out => EX_stage_rd_address
 	);	   
 	
 	stage_3_to_4_reg: EX_WB_Reg
 	port map(
 	clk => clk,	 
-		rd_in => stage3_rd,
-		rd_address_in => stage3_rd_address,
+		rd_in => EX_stage_rd,
+		rd_address_in => EX_stage_rd_address,
 		instruction_in => ID_EX_Reg_instr, 
 		rd_out =>  EX_WB_Reg_rd,
 		rd_address_out => EX_WB_Reg_rd_address,
