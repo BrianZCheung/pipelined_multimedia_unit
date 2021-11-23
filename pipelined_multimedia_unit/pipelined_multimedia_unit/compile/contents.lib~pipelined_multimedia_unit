@@ -1,5 +1,9 @@
-2
+17
 ~E 1 "../src/alu.vhd" 13 alu
-~A 1 "../src/alu.vhd" 23 alu_arch
+~A 1 "../src/alu.vhd" 24 alu_arch
 ~E 1 "../src/alu_tb.vhd" 16 alu_tb
 ~A 1 "../src/alu_tb.vhd" 19 tb_architecture
+~E 1 "../src/forwarding_mux.vhd" 13 forwarding_mux
+~A 1 "../src/forwarding_mux.vhd" 31 forwarding_mux_arch
+~E 1 "../src/stage3.vhd" 15 stage3
+~A 1 "../src/stage3.vhd" 33 stage3_arch

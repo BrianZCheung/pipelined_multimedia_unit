@@ -16,7 +16,8 @@ entity alu is
 	rs_1 : in std_logic_vector(127 downto 0);   
 	rs_2 : in std_logic_vector(127 downto 0);
 	rs_3 : in std_logic_vector(127 downto 0);
-	rd : out std_logic_vector(127 downto 0)
+	rd : out std_logic_vector(127 downto 0);
+	rd_address : out std_logic_vector(4 downto 0)
 	);
 end alu;
 
@@ -45,7 +46,10 @@ begin
 	variable temp_vector128: std_logic_vector(127 downto 0);
 	variable temp_vector32: std_logic_vector(31 downto 0);
 	variable temp_vector16: std_logic_vector(15 downto 0);
-	begin 				 
+	begin
+		
+		--output the rd_address (always index 4 to 0):
+		rd_address <= instruction_in(4 downto 0);
 
 		--4.1 instructions	 
 		--Load Immediate
