@@ -36,7 +36,7 @@ architecture ID_EX_Reg_arch of ID_EX_Reg is
 
 begin 
 	
-	ID_EX_Reg: process(clk, rs_1_in, rs_2_in, rs_3_in, instruction_in) 
+	ID_EX_Reg: process(clk, rs_1_in, rs_2_in, rs_3_in, instruction_in, cont_EX_in, cont_WB_in) 
 	
 	--variables to store the register information from previous stage
 	variable rs_1_reg_store: std_logic_vector(127 downto 0); 
@@ -62,9 +62,9 @@ begin
 				rs_2_out <= rs_2_reg_store;	
 				rs_3_out <= rs_3_reg_store;		
 				instruction_out <= instruction_store;
-				cont_EX_out <= cont_EX_store;
-				cont_WB_out <= cont_WB_out;
-			end if;
+			end if;									 
+			cont_EX_out <= cont_EX_store;
+			cont_WB_out <= cont_WB_store;
 		end if;
 	
 	end process ID_EX_Reg;

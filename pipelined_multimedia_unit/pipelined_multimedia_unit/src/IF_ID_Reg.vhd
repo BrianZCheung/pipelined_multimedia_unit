@@ -33,7 +33,7 @@ architecture IF_ID_reg_arch of IF_ID_reg is
 
 begin 
 	
-	IF_ID_reg: process(clk, instruction_in, pc_in, pc_reset) 
+	IF_ID_reg: process(clk, instruction_in, pc_in, pc_reset, cont_EX_in, cont_WB_in) 
 	
 	--variables to store the instruction information from previous stage
 	variable instruction_store: std_logic_vector(24 downto 0);
@@ -54,9 +54,9 @@ begin
 				if(cont_WB_store = '1') then
 					instruction_out <= instruction_store;
 					pc_out <= pc_store;	  
-					cont_EX_out <= cont_EX_store;
-					cont_WB_out <= cont_WB_out;
-				end if;
+				end if;					  
+				cont_EX_out <= cont_EX_store;
+				cont_WB_out <= cont_WB_store;
 			end if;
 		end if;
 	
