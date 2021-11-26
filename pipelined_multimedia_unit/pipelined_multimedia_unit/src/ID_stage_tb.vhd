@@ -21,7 +21,8 @@ architecture tb_architecture of ID_stage_tb is
 -- stimulus signals 
 signal i_fetch_tb : std_logic_vector(24 downto 0);		 
 signal i_wb_tb : std_logic_vector(24 downto 0);
-signal rd_tb : std_logic_vector(127 downto 0);	
+signal rd_tb : std_logic_vector(127 downto 0);
+signal wr_enabled_tb : std_logic;
 
 -- observed signals 
 signal rs_1_tb : std_logic_vector(127 downto 0);
@@ -36,6 +37,7 @@ begin
 	port map (
 		i_fetch => i_fetch_tb,
 		i_wb => i_wb_tb,
+		wr_enabled => wr_enabled_tb,
 		rd => rd_tb,
 		rs_1 => rs_1_tb,
 		rs_2 => rs_2_tb,
@@ -44,6 +46,8 @@ begin
 	
 	stimlus: process	  
 	begin
+		
+		wr_enabled_tb <= '1';
 		
 		i_fetch_tb <= "0000000000000000000000000";
 		i_wb_tb <= "0000000000000000000000000";

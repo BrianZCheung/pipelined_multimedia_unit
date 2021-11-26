@@ -13,8 +13,10 @@ use ieee.numeric_std.all;
 entity ID_stage is
 	port(
 	i_fetch : in std_logic_vector(24 downto 0);-- instruction being executed	
-	i_wb : in std_logic_vector(24 downto 0);-- instruction of the write back data 		 
-	rd : in std_logic_vector(127 downto 0);	
+	i_wb : in std_logic_vector(24 downto 0);-- instruction of the write back data
+	wr_enabled : in std_logic;-- write enable signal
+	rd : in std_logic_vector(127 downto 0);
+	
 	rs_1 : out std_logic_vector(127 downto 0);   
 	rs_2 : out std_logic_vector(127 downto 0);
 	rs_3 : out std_logic_vector(127 downto 0)
@@ -27,15 +29,17 @@ architecture ID_stage_arch of ID_stage is
 
 begin		  															
 	
-	ID_stage: process(i_fetch, rd)			 			
+	ID_stage: process(i_fetch, i_wb, wr_enabled, rd)			 			
 	
 	type REG is array (31 downto 0) of std_logic_vector(127 downto 0);
 	variable registers : REG := (others=>(others=>'0'));
 	
 	begin 		
 		
-		--write rd into register from write back
-		registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd;
+		--update rd given write back address specified in i_wb
+		if(wr_enabled = '1') then
+			registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd;
+		end if;
 		
 		
 		--reads rs1 rs2 rs3 from register depending on instruction
@@ -62,5 +66,6 @@ begin
 		
 		
 	end process ID_stage;
+	
 	
 end ID_stage_arch;

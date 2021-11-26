@@ -19,6 +19,7 @@ entity ID_EX_Reg is
 		rs_2_in : in std_logic_vector(127 downto 0);
 		rs_3_in : in std_logic_vector(127 downto 0);
 		instruction_in: in std_logic_vector(24 downto 0);
+		
 		rs_1_out : out std_logic_vector(127 downto 0);   
 		rs_2_out : out std_logic_vector(127 downto 0);
 		rs_3_out : out std_logic_vector(127 downto 0);
@@ -30,7 +31,7 @@ architecture ID_EX_Reg_arch of ID_EX_Reg is
 
 begin 
 	
-	ID_EX_Reg: process(rs_1_in, rs_2_in, rs_3_in, clk) 
+	ID_EX_Reg: process(clk, rs_1_in, rs_2_in, rs_3_in, instruction_in) 
 	
 	--variables to store the register information from previous stage
 	variable rs_1_reg_store: std_logic_vector(127 downto 0); 

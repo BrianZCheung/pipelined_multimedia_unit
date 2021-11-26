@@ -18,6 +18,7 @@ entity EX_WB_Reg is
 		rd_in : in std_logic_vector(127 downto 0);   		
 		rd_address_in : in std_logic_vector(4 downto 0);
 		instruction_in: in std_logic_vector(24 downto 0);
+		
 		rd_out : out std_logic_vector(127 downto 0);
 		rd_address_out : out std_logic_vector(4 downto 0);
 		instruction_out: out std_logic_vector(24 downto 0)
@@ -28,7 +29,7 @@ architecture EX_WB_Reg_arch of EX_WB_Reg is
 
 begin 
 	
-	EX_WB_Reg: process(rd_in, clk) 
+	EX_WB_Reg: process(clk, rd_in, rd_address_in, instruction_in) 
 	
 	--variables to store the register information from previous stage
 	variable rd_reg_store: std_logic_vector(127 downto 0); 	   

@@ -393,6 +393,7 @@ begin
 					rd(index*16+15 downto index*16) <= std_logic_vector(resize(temp_unsigned, 16));
 				end loop;
 				
+				
 			elsif(instruction_in(18 downto 15) = "1110") then
 				--SFHS: subtract from halfword saturated block
 				for index in 0 to 7 loop

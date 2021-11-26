@@ -7,9 +7,14 @@ i<>.\src\ID_Reg.vhd
 i<>.\src\ID_Reg_tb.vhd
 i<>.\src\IF_Stage.vhd
 i<>.\src\forwarding_mux.vhd
-i<>.\src\stage3.vhd
 i<>.\src\pipelined_multimedia_unit.vhd
 i<>.\src\IF_ID_Reg.vhd
 i<>.\src\IF_ID_Reg_tb.vhd
 i<>.\src\ID_EX_Reg.vhd
 i<>.\src\EX_WB_Reg.vhd
+i<>.\src\EX_stage.vhd
+i<>.\src\ID_stage.vhd
+i<>.\src\WB_stage.vhd
+i<>.\src\pipelined_multimedia_unit_tb.vhd
+i<>.\src\ID_EX_Reg_tb.vhd
+i<>.\src\ID_stage_tb.vhd

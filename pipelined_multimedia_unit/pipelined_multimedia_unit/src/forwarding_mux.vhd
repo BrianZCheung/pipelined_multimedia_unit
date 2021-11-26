@@ -33,17 +33,17 @@ architecture forwarding_mux_arch of forwarding_mux is
 begin
 	
 	forwarding_mux: process(instruction_in, rs_1, rs_2, rs_3, updated_rd)
-	--variables to take apart instruction_in:
-	variable req_rs_1: std_logic_vector(4 downto 0) := "XXXXX";
-	variable req_rs_2: std_logic_vector(4 downto 0) := "XXXXX";
-	variable req_rs_3: std_logic_vector(4 downto 0) := "XXXXX";
+	--variables to save 3 register addresses within instruction_in:
+	variable req_rs_1: std_logic_vector(4 downto 0) := "-----";
+	variable req_rs_2: std_logic_vector(4 downto 0) := "-----";
+	variable req_rs_3: std_logic_vector(4 downto 0) := "-----";
 	
 	begin
 		--if the instruction is a load immediate
 		if(instruction_in(24) = '0') then
-			req_rs_1 := "XXXXX";
-			req_rs_2 := "XXXXX";
-			req_rs_3 := "XXXXX";
+			req_rs_1 := "-----";
+			req_rs_2 := "-----";
+			req_rs_3 := "-----";
 		
 		--if the instruction is an R4 instruction
 		elsif(instruction_in(24 downto 23) = "10") then
@@ -53,11 +53,21 @@ begin
 		
 		--if the instruction is an R3 instruction
 		elsif(instruction_in(24 downto 23) = "11") then
-			req_rs_1 := instruction_in(9 downto 5);
-			req_rs_2 := instruction_in(14 downto 10);
-			req_rs_3 := "XXXXX";
+			--if the R3 instruction is a NOP:
+			if(instruction_in(18 downto 15) = "0000") then
+				req_rs_1 := "-----";
+				req_rs_2 := "-----";
+				req_rs_3 := "-----";
+			--in all other cases:
+			else
+				req_rs_1 := instruction_in(9 downto 5);
+				req_rs_2 := instruction_in(14 downto 10);
+				req_rs_3 := "-----";
+			end if;
+			
 			
 		end if;
+		
 		
 		--if updated rd has the same address as requested rs1
 		if(updated_rd_address = req_rs_1) then

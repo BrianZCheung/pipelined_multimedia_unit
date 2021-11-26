@@ -79,7 +79,7 @@ begin
 		
 	part2: alu
 		port map(
-			instruction_in => instruction_in, --just takes in the same instruction input as forwarding_mux		 
+			instruction_in => instruction_in, --just takes in the same instruction input signal as forwarding_mux		 
 			rs_1 => rs_1_frwd2alu,   
 			rs_2 => rs_2_frwd2alu,
 			rs_3 => rs_3_frwd2alu,

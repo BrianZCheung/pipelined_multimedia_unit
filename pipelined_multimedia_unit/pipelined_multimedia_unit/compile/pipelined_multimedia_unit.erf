@@ -1,5 +1,6 @@
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd" 
-BEGINPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+WARNING DAGGEN_0523: "The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available."
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
 MESSAGE "Compile Entity "alu"" 
 UPDATEPROGRESS 3
 MESSAGE "Compile Architecture "alu_arch" of Entity "alu"" 
@@ -8,9 +9,9 @@ UPDATEPROGRESS 13
 UPDATEPROGRESS 45
 UPDATEPROGRESS 99
 UPDATEPROGRESS 100
-ENDPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd" 
-BEGINPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
 MESSAGE "Compile Entity "alu_tb"" 
 UPDATEPROGRESS 1
 MESSAGE "Compile Architecture "tb_architecture" of Entity "alu_tb"" 
@@ -72,35 +73,41 @@ UPDATEPROGRESS 97
 UPDATEPROGRESS 98
 UPDATEPROGRESS 99
 UPDATEPROGRESS 100
-ENDPROGRESS C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage.vhd" 
-MESSAGE "Compile Entity "ID_stage"" 
-MESSAGE "Compile Architecture "ID_stage_arch" of Entity "ID_stage"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage_tb.vhd" 
-MESSAGE "Compile Entity "ID_stage_tb"" 
-MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_stage_tb"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_stage.vhd" 
-MESSAGE "Compile Entity "IF_stage"" 
-MESSAGE "Compile Architecture "IF_stage_arch" of Entity "IF_stage"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/forwarding_mux.vhd" 
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/forwarding_mux.vhd" 
 MESSAGE "Compile Entity "forwarding_mux"" 
 MESSAGE "Compile Architecture "forwarding_mux_arch" of Entity "forwarding_mux"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_stage.vhd" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit_tb.vhd" 
+MESSAGE "Compile Entity "pipelined_multimedia_unit_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "pipelined_multimedia_unit_tb"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_stage.vhd" 
 MESSAGE "Compile Entity "EX_stage"" 
 MESSAGE "Compile Architecture "EX_stage_arch" of Entity "EX_stage"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd" 
-MESSAGE "Compile Entity "piplined_multimedia_unit"" 
-MESSAGE "Compile Architecture "piplined_multimedia_unit_arch" of Entity "piplined_multimedia_unit"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_ID_Reg.vhd" 
-MESSAGE "Compile Entity "IF_ID_stage"" 
-MESSAGE "Compile Architecture "IF_ID_stage_arch" of Entity "IF_ID_stage"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg_tb.vhd" 
-MESSAGE "Compile Entity "ID_EX_Reg_tb"" 
-MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_EX_Reg_tb"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg.vhd" 
-MESSAGE "Compile Entity "ID_EX_Reg"" 
-MESSAGE "Compile Architecture "ID_EX_Reg_arch" of Entity "ID_EX_Reg"" 
-MESSAGE "File: C:/Users/MT4T/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_WB_Reg.vhd" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_WB_Reg.vhd" 
 MESSAGE "Compile Entity "EX_WB_Reg"" 
 MESSAGE "Compile Architecture "EX_WB_Reg_arch" of Entity "EX_WB_Reg"" 
-SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg.vhd" 
+MESSAGE "Compile Entity "ID_EX_Reg"" 
+MESSAGE "Compile Architecture "ID_EX_Reg_arch" of Entity "ID_EX_Reg"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg_tb.vhd" 
+MESSAGE "Compile Entity "ID_EX_Reg_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_EX_Reg_tb"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage.vhd" 
+MESSAGE "Compile Entity "ID_stage"" 
+MESSAGE "Compile Architecture "ID_stage_arch" of Entity "ID_stage"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage_tb.vhd" 
+MESSAGE "Compile Entity "ID_stage_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_stage_tb"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_ID_Reg.vhd" 
+MESSAGE "Compile Entity "IF_ID_reg"" 
+MESSAGE "Compile Architecture "IF_ID_reg_arch" of Entity "IF_ID_reg"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_Stage.vhd" 
+MESSAGE "Compile Entity "IF_stage"" 
+MESSAGE "Compile Architecture "IF_stage_arch" of Entity "IF_stage"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd" 
+MESSAGE "Compile Entity "pipelined_multimedia_unit"" 
+MESSAGE "Compile Architecture "pipelined_multimedia_unit_arch" of Entity "pipelined_multimedia_unit"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/WB_stage.vhd" 
+MESSAGE "Compile Entity "WB_stage"" 
+MESSAGE "Compile Architecture "WB_stage_arch" of Entity "WB_stage"" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.5 [s]" 
