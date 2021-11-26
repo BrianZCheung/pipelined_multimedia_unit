@@ -23,13 +23,17 @@ signal clk_tb: std_logic;
 signal rs_1_in_tb : std_logic_vector(127 downto 0);
 signal rs_2_in_tb : std_logic_vector(127 downto 0);
 signal rs_3_in_tb : std_logic_vector(127 downto 0);	 
-signal instruction_in_tb : std_logic_vector(24 downto 0);
+signal instruction_in_tb : std_logic_vector(24 downto 0);	 
+signal cont_EX_in_tb : std_logic;	
+signal cont_WB_in_tb : std_logic;
 
 -- observed signals 
 signal rs_1_out_tb : std_logic_vector(127 downto 0);
 signal rs_2_out_tb : std_logic_vector(127 downto 0);
 signal rs_3_out_tb : std_logic_vector(127 downto 0);   
-signal instruction_out_tb : std_logic_vector(24 downto 0);
+signal instruction_out_tb : std_logic_vector(24 downto 0);	  
+signal cont_EX_out_tb : std_logic;
+signal cont_WB_out_tb : std_logic;
 	
 	
 begin
@@ -45,7 +49,11 @@ begin
 		rs_1_out => rs_1_out_tb,
 		rs_2_out => rs_2_out_tb,
 		rs_3_out => rs_3_out_tb,
-		instruction_out => instruction_out_tb
+		instruction_out => instruction_out_tb,
+		cont_EX_in => cont_EX_in_tb,	 
+		cont_WB_in => cont_WB_in_tb,
+		cont_EX_out => cont_EX_out_tb,  
+		cont_WB_out => cont_EX_out_tb
 		);
 	
 	stimlus: process	  

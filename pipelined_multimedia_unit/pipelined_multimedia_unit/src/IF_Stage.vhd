@@ -18,7 +18,10 @@ entity IF_stage is
 	load_instruction : in std_logic_vector(24 downto 0); --load instruction value (for testbench)
 	
 	instruction_out : out std_logic_vector(24 downto 0);-- instruction being executed
-	pc_out : out std_logic_vector(5 downto 0)-- the incremented PC 
+	pc_out : out std_logic_vector(5 downto 0);-- the incremented PC 			   
+	
+	cont_EX_out : out std_logic;
+	cont_WB_out : out std_logic
 	);
 end IF_stage;  
 
@@ -30,25 +33,30 @@ signal instr_buffer : instr_buffer_arr := (others=>(others=>'-'));
 
 begin	
 
-	IF_module: process(pc_in, pc_reset)
+	IF_module: process(pc_in, pc_reset, load_enable)
 	
 	variable pc_in_var : std_logic_vector(5 downto 0);
 	
 	begin
 		if(pc_reset = '1') then
 			pc_out <= "000000";
-		elsif(not rising_edge(pc_reset) and not falling_edge(pc_reset)) then	
+		elsif(pc_reset = '0' and load_enable = '0') then	
 			pc_in_var := pc_in;
 			
 			--just sends out nop if there's no instruction:
 			if(instr_buffer(to_integer(unsigned(pc_in_var)))(0) = '-') then
 				instruction_out <= "11----0000---------------";
-				pc_out <= std_logic_vector(to_unsigned(to_integer(unsigned(pc_in_var))+1, pc_out'length));
+				pc_out <= std_logic_vector(to_unsigned(to_integer(unsigned(pc_in_var))+1, pc_out'length));	
+				cont_EX_out <= '0';
+				cont_WB_out <= '0';
+				
 			
 			--fetches the instruction pointed by the program counter:
 			else
 				instruction_out <= instr_buffer(to_integer(unsigned(pc_in_var)));
-				pc_out <= std_logic_vector(to_unsigned(to_integer(unsigned(pc_in_var))+1, pc_out'length));
+				pc_out <= std_logic_vector(to_unsigned(to_integer(unsigned(pc_in_var))+1, pc_out'length));		   
+				cont_EX_out <= '1';
+				cont_WB_out <= '1';
 			end if;
 			
 		end if;

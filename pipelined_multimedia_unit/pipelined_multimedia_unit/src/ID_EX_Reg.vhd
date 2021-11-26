@@ -23,7 +23,12 @@ entity ID_EX_Reg is
 		rs_1_out : out std_logic_vector(127 downto 0);   
 		rs_2_out : out std_logic_vector(127 downto 0);
 		rs_3_out : out std_logic_vector(127 downto 0);
-		instruction_out: out std_logic_vector(24 downto 0)
+		instruction_out: out std_logic_vector(24 downto 0);
+		
+		cont_EX_in : in std_logic;
+		cont_WB_in : in std_logic;
+		cont_EX_out : out std_logic;
+		cont_WB_out : out std_logic
 	);
 end ID_EX_Reg;			   
 
@@ -37,7 +42,9 @@ begin
 	variable rs_1_reg_store: std_logic_vector(127 downto 0); 
 	variable rs_2_reg_store: std_logic_vector(127 downto 0);
 	variable rs_3_reg_store: std_logic_vector(127 downto 0); 
-	variable instruction_store: std_logic_vector(24 downto 0);
+	variable instruction_store: std_logic_vector(24 downto 0); 
+	variable cont_EX_store : std_logic;
+	variable cont_WB_store : std_logic;
 	
 	begin	 
 		
@@ -45,13 +52,19 @@ begin
 		rs_2_reg_store := rs_2_in; 
 		rs_3_reg_store := rs_3_in; 	
 		instruction_store := instruction_in;
+		cont_EX_store := cont_EX_in;
+		cont_WB_store := cont_WB_in;
 		
 		--pass information to next stage on next clock cycle
 		if (rising_edge(clk)) then
-			rs_1_out <= rs_1_reg_store;	   
-			rs_2_out <= rs_2_reg_store;	
-			rs_3_out <= rs_3_reg_store;		
-			instruction_out <= instruction_store;
+			if(cont_WB_store = '1') then
+				rs_1_out <= rs_1_reg_store;	   
+				rs_2_out <= rs_2_reg_store;	
+				rs_3_out <= rs_3_reg_store;		
+				instruction_out <= instruction_store;
+				cont_EX_out <= cont_EX_store;
+				cont_WB_out <= cont_WB_out;
+			end if;
 		end if;
 	
 	end process ID_EX_Reg;

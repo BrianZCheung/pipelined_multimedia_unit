@@ -35,16 +35,17 @@ component IF_stage
 		load_enable : in std_logic;
 		load_instruction : in std_logic_vector(24 downto 0);
 		instruction_out : out std_logic_vector(24 downto 0);-- instruction being executed
-		pc_out : out std_logic_vector(5 downto 0)
+		pc_out : out std_logic_vector(5 downto 0);
+		cont_EX_out : out std_logic;
+		cont_WB_out	: out std_logic
 	);
 end component IF_stage;
 
 --signals to transfer information FROM IF_stage: to IF/ID register	 
 signal IF_instr : std_logic_vector(24 downto 0);--(IF_stage -> IF_ID_Reg)
 signal IF_pc : std_logic_vector(5 downto 0);--(IF_stage -> IF_ID_Reg)
-
-
-
+signal IF_cont_EX : std_logic;
+signal IF_cont_WB : std_logic;
 
 
 component IF_ID_Reg
@@ -54,13 +55,19 @@ component IF_ID_Reg
 		pc_in : in std_logic_vector(5 downto 0);
 		pc_reset : in std_logic;
 		instruction_out: out std_logic_vector(24 downto 0);
-		pc_out : out std_logic_vector(5 downto 0)
+		pc_out : out std_logic_vector(5 downto 0);	
+		cont_EX_in : in std_logic;
+		cont_WB_in : in std_logic;
+		cont_EX_out : out std_logic;
+		cont_WB_out	: out std_logic
 	);	
 end component IF_ID_Reg;
 
 --signals to transfer information FROM IF_ID_Reg: to ID stage & ID_IF register	& IF stage
 signal IF_ID_Reg_instr : std_logic_vector(24 downto 0);--(IF_ID_Reg -> ID_stage & IF_ID_Reg -> ID_EX_Reg)
-signal IF_ID_Reg_pc : std_logic_vector(5 downto 0);--(IF_ID_Reg -> IF_stage)
+signal IF_ID_Reg_pc : std_logic_vector(5 downto 0);--(IF_ID_Reg -> IF_stage)  
+signal IF_ID_Reg_cont_EX : std_logic;
+signal IF_ID_Reg_cont_WB : std_logic;
 
 
 
@@ -81,8 +88,7 @@ end component ID_stage;
 --signals to transfer information FROM ID_stage: to ID_EX register	  
 signal ID_stage_rs_1 : std_logic_vector(127 downto 0);--(ID_stage -> ID_EX_Reg)   
 signal ID_stage_rs_2 : std_logic_vector(127 downto 0);--(ID_stage -> ID_EX_Reg) 
-signal ID_stage_rs_3 : std_logic_vector(127 downto 0);--(ID_stage -> ID_EX_Reg) 
-
+signal ID_stage_rs_3 : std_logic_vector(127 downto 0);--(ID_stage -> ID_EX_Reg)    
 
 
 
@@ -97,7 +103,11 @@ component ID_EX_Reg
 		rs_1_out : out std_logic_vector(127 downto 0);   
 		rs_2_out : out std_logic_vector(127 downto 0);
 		rs_3_out : out std_logic_vector(127 downto 0);
-		instruction_out: out std_logic_vector(24 downto 0)
+		instruction_out: out std_logic_vector(24 downto 0); 
+		cont_EX_in : in std_logic;
+		cont_WB_in : in std_logic;
+		cont_EX_out : out std_logic;
+		cont_WB_out	: out std_logic
 	);	
 end component ID_EX_Reg;
 
@@ -106,7 +116,8 @@ signal ID_EX_Reg_instr : std_logic_vector(24 downto 0);--(ID_EX_Reg -> EX_stage 
 signal ID_EX_Reg_rs_1 : std_logic_vector(127 downto 0);--(ID_EX_Reg -> EX_stage)   
 signal ID_EX_Reg_rs_2 : std_logic_vector(127 downto 0);--(ID_EX_Reg -> EX_stage) 
 signal ID_EX_Reg_rs_3 : std_logic_vector(127 downto 0);--(ID_EX_Reg -> EX_stage) 
-
+signal ID_EX_Reg_cont_EX : std_logic;
+signal ID_EX_Reg_cont_WB : std_logic;
 
 
 
@@ -143,7 +154,9 @@ component EX_WB_Reg
 		instruction_in: in std_logic_vector(24 downto 0);
 		rd_out : out std_logic_vector(127 downto 0);   
 		rd_address_out : out std_logic_vector(4 downto 0);
-		instruction_out: out std_logic_vector(24 downto 0)
+		instruction_out: out std_logic_vector(24 downto 0); 
+		cont_WB_in : in std_logic;
+		cont_WB_out	: out std_logic
 	);	
 end component EX_WB_Reg;	 
 
@@ -151,24 +164,24 @@ end component EX_WB_Reg;
 signal EX_WB_Reg_instr : std_logic_vector(24 downto 0);--(EX_WB_Reg -> WB_stage & EX_WB_Reg -> ID_stage)
 signal EX_WB_Reg_rd : std_logic_vector(127 downto 0);--(EX_WB_Reg -> WB_stage & EX_WB_Reg -> EX_stage)
 signal EX_WB_Reg_rd_address : std_logic_vector(4 downto 0);--(EX_WB_Reg -> EX_stage)
+signal EX_WB_Reg_cont_WB : std_logic;
 
 
 
 
-
-component WB_stage
-	port(
-		instruction_in : in std_logic_vector(24 downto 0);-- instruction being executed	
-		rd_in : in std_logic_vector(127 downto 0);	
-		
-		rd_out : out std_logic_vector(127 downto 0);   
-		wr_enabled : out std_logic
-	);
-end component;
+--component WB_stage
+--	port(
+--		instruction_in : in std_logic_vector(24 downto 0);-- instruction being executed	
+--		rd_in : in std_logic_vector(127 downto 0);	
+--		
+--		rd_out : out std_logic_vector(127 downto 0);   
+--		wr_enabled : out std_logic
+--	);
+--end component;
 
 --signals to transfer information FROM WB_stage: to ID_stage
-signal WB_stage_wr_enabled : std_logic;--(WB_stage -> ID_stage)
-signal WB_stage_rd : std_logic_vector(127 downto 0);--(WB_stage -> ID_stage)
+--signal WB_stage_wr_enabled : std_logic;--(WB_stage -> ID_stage)
+--signal WB_stage_rd : std_logic_vector(127 downto 0);--(WB_stage -> ID_stage)
 
 
 
@@ -181,7 +194,10 @@ begin
 		load_enable => load_enable,
 		load_instruction => load_instruction,
 		instruction_out => 	IF_instr,
-		pc_out => IF_pc
+		pc_out => IF_pc,
+		
+		cont_EX_out => IF_cont_EX,
+		cont_WB_out => IF_cont_WB
 	);				  
 	
 	stage_1_to_2_reg: IF_ID_Reg
@@ -191,15 +207,21 @@ begin
 		pc_in => IF_pc,
 		pc_reset => pc_reset,
 		instruction_out => IF_ID_Reg_instr,
-		pc_out => IF_ID_Reg_pc
+		pc_out => IF_ID_Reg_pc,	 
+		
+		cont_EX_in => IF_cont_EX,
+		cont_WB_in => IF_cont_WB,
+		
+		cont_EX_out => IF_ID_Reg_cont_EX,
+		cont_WB_out => IF_ID_Reg_cont_WB
 	);
 	
 	stage_2: ID_stage
 	port map(
 		i_fetch => IF_ID_Reg_instr,	 
 		i_wb => EX_WB_Reg_instr,
-		wr_enabled => WB_stage_wr_enabled,
-		rd => WB_stage_rd,
+		wr_enabled => EX_WB_Reg_cont_WB,
+		rd => EX_WB_Reg_rd,
 		rs_1 =>	ID_stage_rs_1,
 		rs_2 =>	ID_stage_rs_2,
 		rs_3 => ID_stage_rs_3 
@@ -215,7 +237,13 @@ begin
 		rs_1_out => ID_EX_Reg_rs_1,   
 		rs_2_out => ID_EX_Reg_rs_2,
 		rs_3_out => ID_EX_Reg_rs_3,
-		instruction_out => ID_EX_Reg_instr
+		instruction_out => ID_EX_Reg_instr,	 
+		
+		cont_EX_in => IF_ID_Reg_cont_EX,
+		cont_WB_in => IF_ID_Reg_cont_WB,
+		
+		cont_EX_out => ID_EX_Reg_cont_EX,
+		cont_WB_out => ID_EX_Reg_cont_WB
 	);
 	
 	stage_3: EX_stage
@@ -238,16 +266,20 @@ begin
 		instruction_in => ID_EX_Reg_instr, 
 		rd_out =>  EX_WB_Reg_rd,
 		rd_address_out => EX_WB_Reg_rd_address,
-		instruction_out => EX_WB_Reg_instr 	
+		instruction_out => EX_WB_Reg_instr,
+		
+		cont_WB_in => ID_EX_Reg_cont_WB,
+		
+		cont_WB_out => EX_WB_Reg_cont_WB
 	);
 	
-	stage_4: WB_stage
-	port map(
-		instruction_in => EX_WB_Reg_instr,
-		rd_in => EX_WB_Reg_rd,	
-		rd_out => WB_stage_rd,   
-		wr_enabled => WB_stage_wr_enabled
-	);
+--	stage_4: WB_stage
+--	port map(
+--		instruction_in => EX_WB_Reg_instr,
+--		rd_in => EX_WB_Reg_rd,	
+--		rd_out => WB_stage_rd,   
+--		wr_enabled => WB_stage_wr_enabled
+--	);
 	
 	
 	

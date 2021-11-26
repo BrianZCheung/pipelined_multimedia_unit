@@ -47,11 +47,6 @@ begin
 	begin
 		clk_tb <= '0';
 		load_enable_tb <= '1';
-		pc_reset_tb <= '0';
-		wait for 50ns;
-		pc_reset_tb <= '1';
-		wait for 50ns;
-		pc_reset_tb <= '0';
 		
 		file_open(read_file, "translatedMIPSCode.txt", read_mode);
 		
@@ -74,6 +69,10 @@ begin
 		file_close(read_file);
 		file_close(write_file);
 		
+		pc_reset_tb <= '1';
+		wait for 50ns;
+		pc_reset_tb <= '0';
+		wait for 50ns;
 		load_enable_tb <= '0';
 		wait for 100ns;
 		
@@ -81,10 +80,10 @@ begin
 		
 		for clock_pass in 0 to 10 loop
 			clk_tb <= '1';
-			wait for 50ns;
+			wait for 100ns;
 			
 			clk_tb <= '0';
-			wait for 50ns;
+			wait for 100ns;
 		end loop;
 		
 		std.env.finish;
