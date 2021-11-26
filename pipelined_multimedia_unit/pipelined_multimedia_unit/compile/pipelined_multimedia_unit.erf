@@ -110,4 +110,4 @@ MESSAGE "Compile Architecture "pipelined_multimedia_unit_arch" of Entity "pipeli
 MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/WB_stage.vhd" 
 MESSAGE "Compile Entity "WB_stage"" 
 MESSAGE "Compile Architecture "WB_stage_arch" of Entity "WB_stage"" 
-SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.5 [s]" 
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.6 [s]" 

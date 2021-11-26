@@ -1,4 +1,4 @@
-190
+192
 ~E 1 "../src/alu.vhd" 13 alu
 ~A 1 "../src/alu.vhd" 24 alu_arch
 ~E 1 "../src/alu_tb.vhd" 16 alu_tb
@@ -28,7 +28,7 @@
 ~E 1 "../src/IF_ID_Reg.vhd" 15 IF_ID_stage
 ~A 1 "../src/IF_ID_Reg.vhd" 26 IF_ID_stage_arch
 ~E 1 "../src/IF_Stage.vhd" 13 IF_stage
-~A 1 "../src/IF_Stage.vhd" 25 IF_stage_arch
+~A 1 "../src/IF_Stage.vhd" 26 IF_stage_arch
 ~E 1 "../src/pipelined_multimedia_unit.vhd" 15 pipelined_multimedia_unit
 ~A 1 "../src/pipelined_multimedia_unit.vhd" 29 pipelined_multimedia_unit_arch
 ~E 1 "../src/pipelined_multimedia_unit_tb.vhd" 17 pipelined_multimedia_unit_tb

@@ -20,14 +20,15 @@ entity IF_stage is
 	instruction_out : out std_logic_vector(24 downto 0);-- instruction being executed
 	pc_out : out std_logic_vector(5 downto 0)-- the incremented PC 
 	);
-end IF_stage;
+end IF_stage;  
+
 
 architecture IF_stage_arch of IF_stage is	
 
 type instr_buffer_arr is array (63 downto 0) of std_logic_vector(24 downto 0);
 signal instr_buffer : instr_buffer_arr := (others=>(others=>'-'));
 
-begin			   
+begin	
 
 	IF_module: process(pc_in, pc_reset)
 	
