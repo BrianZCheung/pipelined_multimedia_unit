@@ -18,7 +18,32 @@ entity pipelined_multimedia_unit is
 	index : in std_logic_vector(31 downto 0);
 	pc_reset : in std_logic;
 	load_enable : in std_logic;
-	load_instruction : in std_logic_vector(24 downto 0)
+	load_instruction : in std_logic_vector(24 downto 0);
+	
+				  
+	IF_instr_tb : out std_logic_vector(24 downto 0);	
+	IF_pc_tb : out std_logic_vector(31 downto 0);
+	IF_cont_EX_tb : out std_logic;
+	IF_cont_WB_tb : out std_logic;
+	
+	IF_ID_Reg_instr_tb : out std_logic_vector(24 downto 0);
+	IF_ID_Reg_pc_tb : out std_logic_vector(31 downto 0);
+	
+	ID_stage_rs_1_tb : out std_logic_vector(127 downto 0);
+	ID_stage_rs_2_tb : out std_logic_vector(127 downto 0);
+	ID_stage_rs_3_tb : out std_logic_vector(127 downto 0);
+	
+	ID_EX_Reg_instr_tb : out std_logic_vector(24 downto 0);
+	ID_EX_Reg_rs_1_tb : out std_logic_vector(127 downto 0);
+	ID_EX_Reg_rs_2_tb : out std_logic_vector(127 downto 0);
+	ID_EX_Reg_rs_3_tb : out std_logic_vector(127 downto 0);
+	ID_EX_Reg_cont_EX_tb : out std_logic;
+	ID_EX_Reg_cont_WB_tb : out std_logic;
+	
+	EX_stage_rd_tb : out std_logic_vector(127 downto 0);
+	EX_Stage_rd_address_tb : out std_logic_vector(4 downto 0); 
+	EX_WB_Reg_instr_tb : out std_logic_vector(24 downto 0);
+	EX_WB_Reg_cont_WB_tb : out std_logic
 	);
 	
 end pipelined_multimedia_unit;	
@@ -259,6 +284,31 @@ begin
 		cont_WB_in => ID_EX_Reg_cont_WB,
 		
 		cont_WB_out => EX_WB_Reg_cont_WB
-	);	
+	);				
+	
+	IF_instr_tb <= IF_instr;
+	IF_pc_tb <= IF_pc;
+	IF_cont_EX_tb <= IF_cont_EX;
+	IF_cont_WB_tb <= IF_cont_WB;
+	
+	IF_ID_Reg_instr_tb <= IF_ID_Reg_instr;
+	IF_ID_Reg_pc_tb <= IF_ID_Reg_pc;
+	
+	ID_stage_rs_1_tb <= ID_stage_rs_1;	
+	ID_stage_rs_2_tb <= ID_stage_rs_2;
+	ID_stage_rs_3_tb <= ID_stage_rs_3; 
+	
+	ID_EX_Reg_instr_tb <= ID_EX_Reg_instr;
+	ID_EX_Reg_rs_1_tb <= ID_EX_Reg_rs_1;
+	ID_EX_Reg_rs_2_tb <= ID_EX_Reg_rs_2;
+	ID_EX_Reg_rs_3_tb <= ID_EX_Reg_rs_3;   
+	ID_EX_Reg_cont_EX_tb <= ID_EX_Reg_cont_EX;		
+	ID_EX_Reg_cont_WB_tb <= ID_EX_Reg_cont_WB;	
+	
+	EX_stage_rd_tb <= EX_stage_rd_tb;
+	EX_stage_rd_address_tb <= EX_stage_rd_address; 
+	
+	EX_WB_Reg_instr_tb <= EX_WB_Reg_instr;
+	EX_WB_Reg_cont_WB_tb <= EX_WB_Reg_cont_WB;
 	
 end pipelined_multimedia_unit_arch;
