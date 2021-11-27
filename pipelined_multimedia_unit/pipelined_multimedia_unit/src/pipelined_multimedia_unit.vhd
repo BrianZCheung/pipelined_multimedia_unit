@@ -14,7 +14,8 @@ use pipelined_multimedia_unit.all;
 
 entity pipelined_multimedia_unit is	  
 	port(
-	clk : in std_logic;
+	clk : in std_logic;	   
+	index : in std_logic_vector(31 downto 0);
 	pc_reset : in std_logic;
 	load_enable : in std_logic;
 	load_instruction : in std_logic_vector(24 downto 0)
@@ -29,13 +30,14 @@ end pipelined_multimedia_unit;
 architecture pipelined_multimedia_unit_arch of pipelined_multimedia_unit is
 
 component IF_stage	   
-	port(
-		pc_in : in std_logic_vector(5 downto 0);
+	port(	
+		index : in std_logic_vector(31 downto 0);
+		pc_in : in std_logic_vector(31 downto 0);
 		pc_reset : in std_logic;
 		load_enable : in std_logic;
 		load_instruction : in std_logic_vector(24 downto 0);
 		instruction_out : out std_logic_vector(24 downto 0);-- instruction being executed
-		pc_out : out std_logic_vector(5 downto 0);
+		pc_out : out std_logic_vector(31 downto 0);
 		cont_EX_out : out std_logic;
 		cont_WB_out	: out std_logic
 	);
@@ -43,7 +45,7 @@ end component IF_stage;
 
 --signals to transfer information FROM IF_stage: to IF/ID register	 
 signal IF_instr : std_logic_vector(24 downto 0);--(IF_stage -> IF_ID_Reg)
-signal IF_pc : std_logic_vector(5 downto 0);--(IF_stage -> IF_ID_Reg)
+signal IF_pc : std_logic_vector(31 downto 0);--(IF_stage -> IF_ID_Reg)
 signal IF_cont_EX : std_logic;
 signal IF_cont_WB : std_logic;
 
@@ -52,10 +54,10 @@ component IF_ID_Reg
 	port(
 		clk : in std_logic;
 		instruction_in: in std_logic_vector(24 downto 0);
-		pc_in : in std_logic_vector(5 downto 0);
+		pc_in : in std_logic_vector(31 downto 0);
 		pc_reset : in std_logic;
 		instruction_out: out std_logic_vector(24 downto 0);
-		pc_out : out std_logic_vector(5 downto 0);	
+		pc_out : out std_logic_vector(31 downto 0);	
 		cont_EX_in : in std_logic;
 		cont_WB_in : in std_logic;
 		cont_EX_out : out std_logic;
@@ -65,7 +67,7 @@ end component IF_ID_Reg;
 
 --signals to transfer information FROM IF_ID_Reg: to ID stage & ID_IF register	& IF stage
 signal IF_ID_Reg_instr : std_logic_vector(24 downto 0);--(IF_ID_Reg -> ID_stage & IF_ID_Reg -> ID_EX_Reg)
-signal IF_ID_Reg_pc : std_logic_vector(5 downto 0);--(IF_ID_Reg -> IF_stage)  
+signal IF_ID_Reg_pc : std_logic_vector(31 downto 0);--(IF_ID_Reg -> IF_stage)  
 signal IF_ID_Reg_cont_EX : std_logic;
 signal IF_ID_Reg_cont_WB : std_logic;
 
@@ -130,7 +132,8 @@ component EX_stage
 		rs_2 : in std_logic_vector(127 downto 0);
 		rs_3 : in std_logic_vector(127 downto 0); 
 		rd_in : in std_logic_vector(127 downto 0);
-		rd_address_in : in std_logic_vector(4 downto 0);
+		rd_address_in : in std_logic_vector(4 downto 0);   
+		cont_WB_in : in std_logic;
 		
 		--outputs from the alu:
 		rd_out : out std_logic_vector(127 downto 0);
@@ -168,27 +171,11 @@ signal EX_WB_Reg_cont_WB : std_logic;
 
 
 
-
---component WB_stage
---	port(
---		instruction_in : in std_logic_vector(24 downto 0);-- instruction being executed	
---		rd_in : in std_logic_vector(127 downto 0);	
---		
---		rd_out : out std_logic_vector(127 downto 0);   
---		wr_enabled : out std_logic
---	);
---end component;
-
---signals to transfer information FROM WB_stage: to ID_stage
---signal WB_stage_wr_enabled : std_logic;--(WB_stage -> ID_stage)
---signal WB_stage_rd : std_logic_vector(127 downto 0);--(WB_stage -> ID_stage)
-
-
-
 begin
 
 	stage_1: IF_stage
-	port map(
+	port map(  
+		index => index,
 		pc_in => IF_ID_Reg_pc,
 		pc_reset => pc_reset,
 		load_enable => load_enable,
@@ -253,7 +240,8 @@ begin
 		rs_2 => ID_EX_Reg_rs_2,
 		rs_3 => ID_EX_Reg_rs_3,	 
 		rd_in => EX_WB_Reg_rd,
-		rd_address_in => EX_WB_Reg_rd_address,
+		rd_address_in => EX_WB_Reg_rd_address,	
+		cont_WB_in => ID_EX_Reg_cont_WB,
 		rd_out => EX_stage_rd,
 		rd_address_out => EX_stage_rd_address
 	);	   
@@ -271,16 +259,6 @@ begin
 		cont_WB_in => ID_EX_Reg_cont_WB,
 		
 		cont_WB_out => EX_WB_Reg_cont_WB
-	);
-	
---	stage_4: WB_stage
---	port map(
---		instruction_in => EX_WB_Reg_instr,
---		rd_in => EX_WB_Reg_rd,	
---		rd_out => WB_stage_rd,   
---		wr_enabled => WB_stage_wr_enabled
---	);
-	
-	
+	);	
 	
 end pipelined_multimedia_unit_arch;

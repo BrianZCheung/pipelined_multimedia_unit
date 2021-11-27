@@ -57,7 +57,7 @@ begin
 		
 		--pass information to next stage on next clock cycle
 		if (rising_edge(clk)) then
-			if(cont_WB_store = '1') then
+			if(cont_EX_store = '1') then
 				rs_1_out <= rs_1_reg_store;	   
 				rs_2_out <= rs_2_reg_store;	
 				rs_3_out <= rs_3_reg_store;		

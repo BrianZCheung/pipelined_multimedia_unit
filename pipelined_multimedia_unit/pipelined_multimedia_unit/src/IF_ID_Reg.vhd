@@ -16,11 +16,11 @@ entity IF_ID_reg is
 	port(		   
 		clk : in std_logic;
 		instruction_in: in std_logic_vector(24 downto 0);
-		pc_in : in std_logic_vector(5 downto 0);
+		pc_in : in std_logic_vector(31 downto 0);
 		pc_reset : in std_logic;
 		
 		instruction_out: out std_logic_vector(24 downto 0);
-		pc_out : out std_logic_vector(5 downto 0);
+		pc_out : out std_logic_vector(31 downto 0);
 		
 		cont_EX_in : in std_logic;
 		cont_WB_in : in std_logic;
@@ -37,7 +37,7 @@ begin
 	
 	--variables to store the instruction information from previous stage
 	variable instruction_store: std_logic_vector(24 downto 0);
-	variable pc_store: std_logic_vector(5 downto 0);	  
+	variable pc_store: std_logic_vector(31 downto 0);	  
 	variable cont_EX_store : std_logic;
 	variable cont_WB_store : std_logic;
 	
@@ -51,10 +51,10 @@ begin
 			--pass information to next stage on next clock cycle
 			if (rising_edge(clk)) then	 
 				--check for valid instructions to pass information to next stage
-				if(cont_WB_store = '1') then
-					instruction_out <= instruction_store;
-					pc_out <= pc_store;	  
-				end if;					  
+				if(cont_EX_store = '1') then
+					instruction_out <= instruction_store;	  
+				end if;					  				 
+				pc_out <= pc_store;
 				cont_EX_out <= cont_EX_store;
 				cont_WB_out <= cont_WB_store;
 			end if;

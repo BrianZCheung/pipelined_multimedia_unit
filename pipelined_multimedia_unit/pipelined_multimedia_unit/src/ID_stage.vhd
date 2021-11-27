@@ -31,14 +31,17 @@ begin
 	
 	ID_stage: process(i_fetch, i_wb, wr_enabled, rd)			 			
 	
-	type REG is array (31 downto 0) of std_logic_vector(127 downto 0);
-	variable registers : REG := (others=>(others=>'0'));
+	constant MAX_REGSTER_SIZE : integer := 32;
+	type REG is array ((MAX_REGSTER_SIZE-1) downto 0) of std_logic_vector(127 downto 0);
+	variable registers : REG;
+	variable valid_reg : std_logic_vector((MAX_REGSTER_SIZE-1) downto 0) := (others=>'0');
 	
 	begin 		
 		
 		--update rd given write back address specified in i_wb
 		if(wr_enabled = '1') then
-			registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd;
+			registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd; 
+			valid_reg(to_integer(unsigned(i_wb(4 downto 0)))) := '1';
 		end if;
 		
 		
@@ -48,20 +51,44 @@ begin
 		--Load Immediate
 		if(i_fetch(24) = '0') then
 			--assumes rs1 to be rd
-			rs_1 <= registers(to_integer(unsigned(i_fetch(4 downto 0))));	 
+			if(valid_reg(to_integer(unsigned(i_fetch(4 downto 0)))) = '1') then
+				rs_1 <= registers(to_integer(unsigned(i_fetch(4 downto 0))));
+			else
+				rs_1 <= x"00000000000000000000000000000000";
+			end if;
 			
 		--4.2 instructions 
 		--Multiply-Add and Multiply-Subtract R4-Instruction Format
 		elsif(i_fetch(24 downto 23) = "10") then	  
-			rs_3 <= registers(to_integer(unsigned(i_fetch(19 downto 15))));
-			rs_2 <= registers(to_integer(unsigned(i_fetch(14 downto 10))));
-			rs_1 <= registers(to_integer(unsigned(i_fetch(9 downto 5))));	 
+			if(valid_reg(to_integer(unsigned(i_fetch(19 downto 15)))) = '1') then
+				rs_3 <= registers(to_integer(unsigned(i_fetch(19 downto 15))));
+			else
+				rs_3 <= x"00000000000000000000000000000000";
+			end if;
+			if(valid_reg(to_integer(unsigned(i_fetch(14 downto 10)))) = '1') then
+				rs_2 <= registers(to_integer(unsigned(i_fetch(14 downto 10))));
+			else
+				rs_2 <= x"00000000000000000000000000000000";
+			end if;
+			if(valid_reg(to_integer(unsigned(i_fetch(9 downto 5)))) = '1') then
+				rs_1 <= registers(to_integer(unsigned(i_fetch(9 downto 5))));
+			else
+				rs_1 <= x"00000000000000000000000000000000";
+			end if;	 
 			
 		--4.3 instructions	
 		--R3-Instruction Format
 		elsif(i_fetch(24 downto 23) = "11") then	  
-			rs_2 <= registers(to_integer(unsigned(i_fetch(14 downto 10))));
-			rs_1 <= registers(to_integer(unsigned(i_fetch(9 downto 5))));
+			if(valid_reg(to_integer(unsigned(i_fetch(14 downto 10)))) = '1') then
+				rs_2 <= registers(to_integer(unsigned(i_fetch(14 downto 10))));
+			else
+				rs_2 <= x"00000000000000000000000000000000";
+			end if;
+			if(valid_reg(to_integer(unsigned(i_fetch(9 downto 5)))) = '1') then
+				rs_1 <= registers(to_integer(unsigned(i_fetch(9 downto 5))));
+			else
+				rs_1 <= x"00000000000000000000000000000000";
+			end if;	
 		end if;
 		
 		
