@@ -23,7 +23,6 @@ signal instruction_in_tb : std_logic_vector(24 downto 0);
 signal rs_1_tb : std_logic_vector(127 downto 0);
 signal rs_2_tb : std_logic_vector(127 downto 0);
 signal rs_3_tb : std_logic_vector(127 downto 0);
-signal rs_4_tb : std_logic_vector(127 downto 0);
 -- observed signals 
 signal rd_tb : std_logic_vector(127 downto 0);	 
 	

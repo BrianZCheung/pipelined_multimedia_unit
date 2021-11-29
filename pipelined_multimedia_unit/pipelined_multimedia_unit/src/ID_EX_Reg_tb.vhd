@@ -66,7 +66,11 @@ begin
 		rs_2_in_tb <= x"00000000000000000000000000000010";	
 		wait for 10ns;
 		rs_3_in_tb <= x"00000000000000000000000000000011";
-		wait for 10ns;
+		wait for 10ns;			
+		cont_EX_in_tb <= '1';	
+		wait for 10ns;	
+		cont_WB_in_tb <= '0';  
+		wait for 10ns;	
 		clk_tb <= '1';
 		wait for 100ns;
 		
@@ -79,8 +83,12 @@ begin
 		rs_3_in_tb <= x"00000000000000000000000000000011";	 
 		wait for 10ns;
 		rs_1_in_tb <= x"00000000000000000000000000000100";	
-		wait for 10ns;
-		clk_tb <= '1';
+		wait for 10ns; 
+		cont_EX_in_tb <= '1';	
+		wait for 10ns;	
+		cont_WB_in_tb <= '1';  
+		wait for 10ns;	
+		clk_tb <= '1'; 
 		wait for 100ns;
 	
 	std.env.finish;
