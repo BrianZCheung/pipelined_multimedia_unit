@@ -360,18 +360,11 @@ begin
 				
 				
 			elsif(instruction_in(18 downto 15) = "1100") then
-					--can the immediate value be negative?
-					--what does it mean for the immediate value to be coming from the instruction? 
 				--SHLHI: shift left halfword immediate block
-				temp_int := to_integer(unsigned(rs_2(4 downto 0)));
+				temp_int := to_integer(unsigned(instruction_in(13 downto 10)));
 				for index in 0 to 7 loop
 					temp_vector16 := rs_1(index*16+15 downto index*16);
 					if(temp_int >= 0) then
-						for	shft in 0 to temp_int loop
-							temp_vector16 := temp_vector16(14 downto 0) & '0';
-						end loop;
-					else
-						temp_int := temp_int*(-1);
 						for	shft in 0 to temp_int loop
 							temp_vector16 := temp_vector16(14 downto 0) & '0';
 						end loop;
