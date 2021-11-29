@@ -5,10 +5,26 @@
 -- Description :	   
 -- 
 -- Authored by : Brian Cheung and Ryuichi Lin
---  
+--
 library ieee;
 use ieee.std_logic_1164.all;  
-use ieee.numeric_std.all;	  
+use ieee.numeric_std.all;
+
+package ID_package is
+	constant MAX_REGSTER_SIZE : integer := 32;
+	type REG is array ((MAX_REGSTER_SIZE-1) downto 0) of std_logic_vector(127 downto 0);
+end package;
+
+package body ID_package is
+end package body;
+
+
+
+
+library ieee;
+use ieee.std_logic_1164.all;  
+use ieee.numeric_std.all;
+use work.ID_package.all;
 
 entity ID_stage is
 	port(
@@ -19,20 +35,18 @@ entity ID_stage is
 	
 	rs_1 : out std_logic_vector(127 downto 0);   
 	rs_2 : out std_logic_vector(127 downto 0);
-	rs_3 : out std_logic_vector(127 downto 0)
+	rs_3 : out std_logic_vector(127 downto 0);
+	
+	ID_registers : out REG
 	);
 end ID_stage;
 
 architecture ID_stage_arch of ID_stage is	 	   
 
-
-
 begin		  															
 	
 	ID_stage: process(i_fetch, i_wb, wr_enabled, rd)			 			
 	
-	constant MAX_REGSTER_SIZE : integer := 32;
-	type REG is array ((MAX_REGSTER_SIZE-1) downto 0) of std_logic_vector(127 downto 0);
 	variable registers : REG;
 	variable valid_reg : std_logic_vector((MAX_REGSTER_SIZE-1) downto 0) := (others=>'0');
 	
@@ -40,8 +54,11 @@ begin
 		
 		--update rd given write back address specified in i_wb
 		if(wr_enabled = '1') then
-			registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd; 
+			registers(to_integer(unsigned(i_wb(4 downto 0)))) := rd;
 			valid_reg(to_integer(unsigned(i_wb(4 downto 0)))) := '1';
+			
+			--send the array of registers out so tb can read:
+			ID_registers <= registers;
 		end if;
 		
 		

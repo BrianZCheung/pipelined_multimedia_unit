@@ -13,6 +13,7 @@ use ieee.numeric_std.all;
 library pipelined_multimedia_unit;
 use pipelined_multimedia_unit.all;
 use std.textio.all;-- library for reading text files
+use work.ID_package.all;
 	
 entity pipelined_multimedia_unit_tb is
 end pipelined_multimedia_unit_tb;
@@ -51,6 +52,8 @@ signal EX_Stage_rd_address_tb : std_logic_vector(4 downto 0);
 signal EX_WB_Reg_instr_tb : std_logic_vector(24 downto 0);
 signal EX_WB_Reg_cont_WB_tb : std_logic;
 
+signal ID_registers_tb : REG;
+
 begin
 	
 	UUT: entity pipelined_multimedia_unit
@@ -83,7 +86,9 @@ begin
 			EX_stage_rd_tb => EX_stage_rd_tb,
 			EX_stage_rd_address_tb => EX_stage_rd_address_tb,
 			EX_WB_Reg_instr_tb => EX_WB_Reg_instr_tb,
-			EX_WB_Reg_cont_WB_tb => EX_WB_Reg_cont_WB_tb
+			EX_WB_Reg_cont_WB_tb => EX_WB_Reg_cont_WB_tb,
+			
+			ID_registers_tb => ID_registers_tb
 		);
 		
 	stimulus: process
@@ -338,6 +343,45 @@ begin
 			--report out pipeline information
 			
 		end loop;
+		
+		
+		--verifying the register values given the sample instructions:
+		assert(ID_registers_tb(0) = x"F000F001F002F003F004F000F000F000")
+		report "register[0] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(1) = x"F000F000F000F000F000F005F006F007")
+		report "register[1] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(2) = x"E000E001E002E003E004E005E006E007")
+		report "register[2] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(3) = x"12003400560078009A00BC00DE00FF00")
+		report "register[3] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(4) = x"012003400560078009A00BC00DE00FF0")
+		report "register[4] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(5) = x"132037405B607F80A3A0C7C0EBE00EF0")
+		report "register[5] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(6) = x"123456789ABCDEFFFEDCBA9876543210")
+		report "register[6] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(7) = x"00000001000100010001000100010000")
+		report "register[7] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(8) = x"1234CDEF1234CDEF1234CDEF1234CDEF")
+		report "register[8] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(9) = x"0000000000000000000000007FFFFFFF")
+		report "register[9] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(10) = x"00000000000000000000000000007FFF")
+		report "register[10] has the wrong value!" severity error;
+		
+		assert(ID_registers_tb(11) = x"0000000000000000000000007FFFFFFF")
+		report "register[11] has the wrong value!" severity error;
+			
 		
 		std.env.finish;
 	end process;

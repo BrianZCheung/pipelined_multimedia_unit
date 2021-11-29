@@ -5,12 +5,13 @@
 -- Description :	   
 -- 
 -- Authored by : Brian Cheung and Ryuichi Lin
---  
+--
 library ieee;
 use ieee.std_logic_1164.all;  
 use ieee.numeric_std.all;
 library pipelined_multimedia_unit;
-use pipelined_multimedia_unit.all;		
+use pipelined_multimedia_unit.all;
+use work.ID_package.all;
 
 entity pipelined_multimedia_unit is	  
 	port(
@@ -43,7 +44,9 @@ entity pipelined_multimedia_unit is
 	EX_stage_rd_tb : out std_logic_vector(127 downto 0);
 	EX_Stage_rd_address_tb : out std_logic_vector(4 downto 0); 
 	EX_WB_Reg_instr_tb : out std_logic_vector(24 downto 0);
-	EX_WB_Reg_cont_WB_tb : out std_logic
+	EX_WB_Reg_cont_WB_tb : out std_logic;
+	
+	ID_registers_tb : out REG
 	);
 	
 end pipelined_multimedia_unit;	
@@ -108,7 +111,8 @@ component ID_stage
 		rd : in std_logic_vector(127 downto 0);	
 		rs_1 : out std_logic_vector(127 downto 0);   
 		rs_2 : out std_logic_vector(127 downto 0);
-		rs_3 : out std_logic_vector(127 downto 0)
+		rs_3 : out std_logic_vector(127 downto 0);
+		ID_registers : out REG
 	);
 end component ID_stage;	
 
@@ -236,7 +240,9 @@ begin
 		rd => EX_WB_Reg_rd,
 		rs_1 =>	ID_stage_rs_1,
 		rs_2 =>	ID_stage_rs_2,
-		rs_3 => ID_stage_rs_3 
+		rs_3 => ID_stage_rs_3,
+		
+		ID_registers => ID_registers_tb
 	);	
 	
 	stage_2_to_3_reg: ID_EX_Reg

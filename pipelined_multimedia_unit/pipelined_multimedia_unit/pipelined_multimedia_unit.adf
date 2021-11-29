@@ -95,7 +95,6 @@ Selected=
 /IF_ID_Reg.vhd=-1
 /IF_Stage.vhd=-1
 /pipelined_multimedia_unit.vhd=-1
-/WB_stage.vhd=-1
 
 [Files.Data]
 .\src\alu.vhd=VHDL Source Code
@@ -111,5 +110,4 @@ Selected=
 .\src\IF_ID_Reg.vhd=VHDL Source Code
 .\src\IF_Stage.vhd=VHDL Source Code
 .\src\pipelined_multimedia_unit.vhd=VHDL Source Code
-.\src\WB_stage.vhd=VHDL Source Code
 

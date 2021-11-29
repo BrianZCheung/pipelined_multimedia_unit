@@ -11,4 +11,3 @@
 .\src\IF_ID_Reg.vhd
 .\src\IF_Stage.vhd
 .\src\pipelined_multimedia_unit.vhd
-.\src\WB_stage.vhd
