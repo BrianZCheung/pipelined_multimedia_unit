@@ -1,49 +1,83 @@
+restart
 # ELBREAD: Elaboration process.
 # ELBREAD: Elaboration time 0.0 [s].
-acom -O3 -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd $dsn/src/forwarding_mux.vhd $dsn/src/pipelined_multimedia_unit_tb.vhd $dsn/src/EX_stage.vhd $dsn/src/EX_WB_Reg.vhd $dsn/src/ID_EX_Reg.vhd $dsn/src/ID_EX_Reg_tb.vhd $dsn/src/ID_stage.vhd $dsn/src/ID_stage_tb.vhd $dsn/src/IF_ID_Reg.vhd $dsn/src/IF_Stage.vhd $dsn/src/pipelined_multimedia_unit.vhd $dsn/src/WB_stage.vhd
-# Warning: DAGGEN_0523: The source is compiled without the -dbg switch. Line breakpoints and assertion debug will not be available.
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
-# Compile Entity "alu"
-# Compile Architecture "alu_arch" of Entity "alu"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
-# Compile Entity "alu_tb"
-# Compile Architecture "tb_architecture" of Entity "alu_tb"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/forwarding_mux.vhd
-# Compile Entity "forwarding_mux"
-# Compile Architecture "forwarding_mux_arch" of Entity "forwarding_mux"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit_tb.vhd
-# Compile Entity "pipelined_multimedia_unit_tb"
-# Compile Architecture "tb_architecture" of Entity "pipelined_multimedia_unit_tb"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_stage.vhd
-# Compile Entity "EX_stage"
-# Compile Architecture "EX_stage_arch" of Entity "EX_stage"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_WB_Reg.vhd
-# Compile Entity "EX_WB_Reg"
-# Compile Architecture "EX_WB_Reg_arch" of Entity "EX_WB_Reg"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg.vhd
-# Compile Entity "ID_EX_Reg"
-# Compile Architecture "ID_EX_Reg_arch" of Entity "ID_EX_Reg"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg_tb.vhd
-# Compile Entity "ID_EX_Reg_tb"
-# Compile Architecture "tb_architecture" of Entity "ID_EX_Reg_tb"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage.vhd
-# Compile Package "ID_package"
-# Compile Package Body "ID_package"
-# Compile Entity "ID_stage"
-# Compile Architecture "ID_stage_arch" of Entity "ID_stage"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage_tb.vhd
-# Compile Entity "ID_stage_tb"
-# Compile Architecture "tb_architecture" of Entity "ID_stage_tb"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_ID_Reg.vhd
-# Compile Entity "IF_ID_reg"
-# Compile Architecture "IF_ID_reg_arch" of Entity "IF_ID_reg"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_Stage.vhd
-# Compile Entity "IF_stage"
-# Compile Architecture "IF_stage_arch" of Entity "IF_stage"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd
-# Compile Entity "pipelined_multimedia_unit"
-# Compile Architecture "pipelined_multimedia_unit_arch" of Entity "pipelined_multimedia_unit"
-# File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/WB_stage.vhd
-# Error: COMP96_0001: Cannot find source file "C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/WB_stage.vhd".
-# Compile failure 1 Errors 0 Warnings  Analysis time :  2.0 [s]
-acom -O3 -e 100 -work pipelined_multimedia_unit -2008  $dsn/src/alu.vhd $dsn/src/alu_tb.vhd $dsn/src/forwarding_mux.vhd $dsn/src
+# 
+# KERNEL: Main thread initiated.
+# KERNEL: Kernel process initialization phase.
+# ELAB2: Elaboration final pass...
+# KERNEL: PLI/VHPI kernel's engine initialization done.
+# PLI: Loading library 'C:\Aldec\Active-HDL-Student-Edition\bin\systf.dll'
+# VHPI: Loading library 'systf.dll'
+# ELAB2: Create instances ...
+# KERNEL: Time resolution set to 1ps.
+# ELAB2: Create instances complete.
+# SLP: Started
+# SLP: Elaboration phase ...
+# SLP: Elaboration phase ... skipped, nothing to simulate in SLP mode : 0.0 [s]
+# SLP: Finished : 0.0 [s]
+# ELAB2: Elaboration final pass complete - time: 0.0 [s].
+# KERNEL: Warning: You are using the Active-HDL Student Edition. The performance of simulation is running at a reduced rate.
+# KERNEL: Warning: Contact Aldec for available upgrade options - sales@aldec.com.
+# KERNEL: Kernel process initialization done.
+# Allocation: Simulator allocated 7328 kB (elbread=1280 elab2=5901 kernel=146 sdf=0)
+# KERNEL: ASDB file was created in location C:\Users\ryuno\github\pipelined_multimedia_unit\pipelined_multimedia_unit\pipelined_multimedia_unit\src\wave.asdb
+#  6:42 PM, Monday, November 29, 2021
+#  Simulation has been initialized
+# Waveform file 'untitled.awc' connected to 'C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/wave.asdb'.
+run
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 740 ns,  Iteration: 1,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_1,  Process: IF_module.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 740 ns,  Iteration: 1,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_1,  Process: IF_module.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 740 ns,  Iteration: 1,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_1,  Process: IF_module.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 740 ns,  Iteration: 1,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_1,  Process: IF_module.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 740 ns,  Iteration: 1,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_1,  Process: IF_module.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 840 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 840 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 840 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 1040 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: WARNING: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+# KERNEL: Time: 1040 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 4240 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD."<": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD."<": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD."<": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD."<": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# KERNEL: WARNING: NUMERIC_STD.">": metavalue detected, returning FALSE
+# KERNEL: Time: 13440 ns,  Iteration: 2,  Instance: /pipelined_multimedia_unit_tb/UUT/stage_3/alu_unit,  Process: alu.
+# RUNTIME: Info: RUNTIME_0142 pipelined_multimedia_unit_tb.vhd (405): finish called.
+# KERNEL: Time: 16250 ns,  Iteration: 0,  Instance: /pipelined_multimedia_unit_tb,  Process: stimulus.
+# KERNEL: stopped at time: 16250 ns
+# VSIM: Simulation has finished. There are no more test vectors to simulate.

@@ -36,7 +36,7 @@ fileopenfolder=C:\Users\ryuno\github\pipelined_multimedia_unit\pipelined_multime
 WindowVisible=0
 
 [HierarchyViewer]
-HierarchyInformation=pipelined_multimedia_unit_tb|tb_architecture|0
+HierarchyInformation=pipelined_multimedia_unit_tb|tb_architecture|0 
 ShowHide=ShowTopLevel
 Selected=
 
@@ -47,38 +47,6 @@ WindowVisible=0
 HierarchyInformation=pipelined_multimedia_unit_tb|tb_architecture|0
 ShowHide=ShowTopLevel
 Selected=
-
-[Files]
-/alu.vhd=-1
-/alu_tb.vhd=-1
-/forwarding_mux.vhd=-1
-/pipelined_multimedia_unit_tb.vhd=-1
-/EX_stage.vhd=-1
-/EX_WB_Reg.vhd=-1
-/ID_EX_Reg.vhd=-1
-/ID_EX_Reg_tb.vhd=-1
-/ID_stage.vhd=-1
-/ID_stage_tb.vhd=-1
-/IF_ID_Reg.vhd=-1
-/IF_Stage.vhd=-1
-/pipelined_multimedia_unit.vhd=-1
-
-[Files.Data]
-.\src\alu.vhd=VHDL Source Code
-.\src\alu_tb.vhd=VHDL Source Code
-.\src\stage3.vhd=VHDL Source Code
-.\src\forwarding_mux.vhd=VHDL Source Code
-.\src\pipelined_multimedia_unit_tb.vhd=VHDL Source Code
-.\src\EX_stage.vhd=VHDL Source Code
-.\src\EX_WB_Reg.vhd=VHDL Source Code
-.\src\ID_EX_Reg.vhd=VHDL Source Code
-.\src\ID_EX_Reg_tb.vhd=VHDL Source Code
-.\src\ID_stage.vhd=VHDL Source Code
-.\src\ID_stage_tb.vhd=VHDL Source Code
-.\src\IF_ID_Reg.vhd=VHDL Source Code
-.\src\IF_Stage.vhd=VHDL Source Code
-.\src\pipelined_multimedia_unit.vhd=VHDL Source Code
-.\src\WB_stage.vhd=VHDL Source Code
 
 [Files]
 /alu.vhd=-1
@@ -112,4 +80,34 @@ Selected=
 .\src\IF_Stage.vhd=VHDL Source Code
 .\src\pipelined_multimedia_unit.vhd=VHDL Source Code
 .\src\WB_stage.vhd=VHDL Source Code
+
+[Files]
+/alu.vhd=-1
+/alu_tb.vhd=-1
+/forwarding_mux.vhd=-1
+/pipelined_multimedia_unit_tb.vhd=-1
+/EX_stage.vhd=-1
+/EX_WB_Reg.vhd=-1
+/ID_EX_Reg.vhd=-1
+/ID_EX_Reg_tb.vhd=-1
+/ID_stage.vhd=-1
+/ID_stage_tb.vhd=-1
+/IF_ID_Reg.vhd=-1
+/IF_Stage.vhd=-1
+/pipelined_multimedia_unit.vhd=-1
+
+[Files.Data]
+.\src\alu.vhd=VHDL Source Code
+.\src\alu_tb.vhd=VHDL Source Code
+.\src\forwarding_mux.vhd=VHDL Source Code
+.\src\pipelined_multimedia_unit_tb.vhd=VHDL Source Code
+.\src\EX_stage.vhd=VHDL Source Code
+.\src\EX_WB_Reg.vhd=VHDL Source Code
+.\src\ID_EX_Reg.vhd=VHDL Source Code
+.\src\ID_EX_Reg_tb.vhd=VHDL Source Code
+.\src\ID_stage.vhd=VHDL Source Code
+.\src\ID_stage_tb.vhd=VHDL Source Code
+.\src\IF_ID_Reg.vhd=VHDL Source Code
+.\src\IF_Stage.vhd=VHDL Source Code
+.\src\pipelined_multimedia_unit.vhd=VHDL Source Code
 

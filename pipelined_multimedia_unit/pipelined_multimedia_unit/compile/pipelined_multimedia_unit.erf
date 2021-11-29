@@ -10,4 +10,189 @@ UPDATEPROGRESS 46
 UPDATEPROGRESS 99
 UPDATEPROGRESS 100
 ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu.vhd
-SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  0.1 [s]" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+MESSAGE "Compile Entity "alu_tb"" 
+UPDATEPROGRESS 1
+MESSAGE "Compile Architecture "tb_architecture" of Entity "alu_tb"" 
+UPDATEPROGRESS 2
+UPDATEPROGRESS 3
+UPDATEPROGRESS 5
+UPDATEPROGRESS 8
+UPDATEPROGRESS 9
+UPDATEPROGRESS 10
+UPDATEPROGRESS 26
+UPDATEPROGRESS 43
+UPDATEPROGRESS 44
+UPDATEPROGRESS 45
+UPDATEPROGRESS 46
+UPDATEPROGRESS 47
+UPDATEPROGRESS 48
+UPDATEPROGRESS 49
+UPDATEPROGRESS 50
+UPDATEPROGRESS 51
+UPDATEPROGRESS 52
+UPDATEPROGRESS 53
+UPDATEPROGRESS 54
+UPDATEPROGRESS 55
+UPDATEPROGRESS 56
+UPDATEPROGRESS 57
+UPDATEPROGRESS 59
+UPDATEPROGRESS 61
+UPDATEPROGRESS 62
+UPDATEPROGRESS 63
+UPDATEPROGRESS 64
+UPDATEPROGRESS 65
+UPDATEPROGRESS 66
+UPDATEPROGRESS 67
+UPDATEPROGRESS 69
+UPDATEPROGRESS 70
+UPDATEPROGRESS 71
+UPDATEPROGRESS 72
+UPDATEPROGRESS 73
+UPDATEPROGRESS 74
+UPDATEPROGRESS 76
+UPDATEPROGRESS 78
+UPDATEPROGRESS 79
+UPDATEPROGRESS 80
+UPDATEPROGRESS 81
+UPDATEPROGRESS 83
+UPDATEPROGRESS 84
+UPDATEPROGRESS 85
+UPDATEPROGRESS 86
+UPDATEPROGRESS 87
+UPDATEPROGRESS 88
+UPDATEPROGRESS 90
+UPDATEPROGRESS 91
+UPDATEPROGRESS 92
+UPDATEPROGRESS 93
+UPDATEPROGRESS 94
+UPDATEPROGRESS 95
+UPDATEPROGRESS 96
+UPDATEPROGRESS 97
+UPDATEPROGRESS 98
+UPDATEPROGRESS 99
+UPDATEPROGRESS 100
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/alu_tb.vhd
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/forwarding_mux.vhd" 
+MESSAGE "Compile Entity "forwarding_mux"" 
+MESSAGE "Compile Architecture "forwarding_mux_arch" of Entity "forwarding_mux"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit_tb.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit_tb.vhd
+UPDATEPROGRESS 2
+MESSAGE "Compile Entity "pipelined_multimedia_unit_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "pipelined_multimedia_unit_tb"" 
+UPDATEPROGRESS 3
+UPDATEPROGRESS 4
+UPDATEPROGRESS 5
+UPDATEPROGRESS 6
+UPDATEPROGRESS 7
+UPDATEPROGRESS 8
+UPDATEPROGRESS 9
+UPDATEPROGRESS 10
+UPDATEPROGRESS 11
+UPDATEPROGRESS 21
+UPDATEPROGRESS 24
+UPDATEPROGRESS 25
+UPDATEPROGRESS 31
+UPDATEPROGRESS 32
+UPDATEPROGRESS 33
+UPDATEPROGRESS 34
+UPDATEPROGRESS 35
+UPDATEPROGRESS 36
+UPDATEPROGRESS 37
+UPDATEPROGRESS 38
+UPDATEPROGRESS 39
+UPDATEPROGRESS 40
+UPDATEPROGRESS 41
+UPDATEPROGRESS 42
+UPDATEPROGRESS 43
+UPDATEPROGRESS 44
+UPDATEPROGRESS 45
+UPDATEPROGRESS 46
+UPDATEPROGRESS 47
+UPDATEPROGRESS 48
+UPDATEPROGRESS 49
+UPDATEPROGRESS 50
+UPDATEPROGRESS 51
+UPDATEPROGRESS 52
+UPDATEPROGRESS 53
+UPDATEPROGRESS 54
+UPDATEPROGRESS 55
+UPDATEPROGRESS 56
+UPDATEPROGRESS 57
+UPDATEPROGRESS 85
+UPDATEPROGRESS 86
+UPDATEPROGRESS 88
+UPDATEPROGRESS 89
+UPDATEPROGRESS 98
+UPDATEPROGRESS 99
+UPDATEPROGRESS 100
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit_tb.vhd
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_stage.vhd" 
+MESSAGE "Compile Entity "EX_stage"" 
+MESSAGE "Compile Architecture "EX_stage_arch" of Entity "EX_stage"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/EX_WB_Reg.vhd" 
+MESSAGE "Compile Entity "EX_WB_Reg"" 
+MESSAGE "Compile Architecture "EX_WB_Reg_arch" of Entity "EX_WB_Reg"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg.vhd" 
+MESSAGE "Compile Entity "ID_EX_Reg"" 
+MESSAGE "Compile Architecture "ID_EX_Reg_arch" of Entity "ID_EX_Reg"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_EX_Reg_tb.vhd" 
+MESSAGE "Compile Entity "ID_EX_Reg_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_EX_Reg_tb"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage.vhd" 
+MESSAGE "Compile Package "ID_package"" 
+MESSAGE "Compile Package Body "ID_package"" 
+MESSAGE "Compile Entity "ID_stage"" 
+MESSAGE "Compile Architecture "ID_stage_arch" of Entity "ID_stage"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/ID_stage_tb.vhd" 
+MESSAGE "Compile Entity "ID_stage_tb"" 
+MESSAGE "Compile Architecture "tb_architecture" of Entity "ID_stage_tb"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_ID_Reg.vhd" 
+MESSAGE "Compile Entity "IF_ID_reg"" 
+MESSAGE "Compile Architecture "IF_ID_reg_arch" of Entity "IF_ID_reg"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/IF_Stage.vhd" 
+MESSAGE "Compile Entity "IF_stage"" 
+MESSAGE "Compile Architecture "IF_stage_arch" of Entity "IF_stage"" 
+MESSAGE "File: C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd" 
+BEGINPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd
+UPDATEPROGRESS 2
+MESSAGE "Compile Entity "pipelined_multimedia_unit"" 
+UPDATEPROGRESS 13
+UPDATEPROGRESS 15
+MESSAGE "Compile Architecture "pipelined_multimedia_unit_arch" of Entity "pipelined_multimedia_unit"" 
+UPDATEPROGRESS 21
+UPDATEPROGRESS 22
+UPDATEPROGRESS 23
+UPDATEPROGRESS 28
+UPDATEPROGRESS 29
+UPDATEPROGRESS 31
+UPDATEPROGRESS 35
+UPDATEPROGRESS 36
+UPDATEPROGRESS 37
+UPDATEPROGRESS 44
+UPDATEPROGRESS 45
+UPDATEPROGRESS 47
+UPDATEPROGRESS 53
+UPDATEPROGRESS 55
+UPDATEPROGRESS 60
+UPDATEPROGRESS 61
+UPDATEPROGRESS 62
+UPDATEPROGRESS 67
+UPDATEPROGRESS 72
+UPDATEPROGRESS 76
+UPDATEPROGRESS 82
+UPDATEPROGRESS 87
+UPDATEPROGRESS 91
+UPDATEPROGRESS 92
+UPDATEPROGRESS 93
+UPDATEPROGRESS 94
+UPDATEPROGRESS 95
+UPDATEPROGRESS 96
+UPDATEPROGRESS 97
+UPDATEPROGRESS 98
+UPDATEPROGRESS 99
+UPDATEPROGRESS 100
+ENDPROGRESS C:/Users/ryuno/github/pipelined_multimedia_unit/pipelined_multimedia_unit/pipelined_multimedia_unit/src/pipelined_multimedia_unit.vhd
+SUCCESS "Compile success 0 Errors 0 Warnings  Analysis time :  1.0 [s]" 

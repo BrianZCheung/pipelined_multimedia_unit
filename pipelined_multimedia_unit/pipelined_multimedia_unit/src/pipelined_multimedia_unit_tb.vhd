@@ -100,6 +100,8 @@ begin
 	variable numbOfInstr : integer := 0;		 
 	variable cycleCount : integer := 1;
 	
+	variable register_vector : std_logic_vector(127 downto 0);
+	
 	file write_file : text open write_mode is "results.txt";
 	
 	begin
@@ -346,42 +348,22 @@ begin
 		
 		
 		--verifying the register values given the sample instructions:
-		assert(ID_registers_tb(0) = x"F000F001F002F003F004F000F000F000")
-		report "register[0] has the wrong value!" severity error;
+	
+		file_open(read_file, "verifyRegisters.txt", read_mode);
 		
-		assert(ID_registers_tb(1) = x"F000F000F000F000F000F005F006F007")
-		report "register[1] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(2) = x"E000E001E002E003E004E005E006E007")
-		report "register[2] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(3) = x"12003400560078009A00BC00DE00FF00")
-		report "register[3] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(4) = x"012003400560078009A00BC00DE00FF0")
-		report "register[4] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(5) = x"132037405B607F80A3A0C7C0EBE00EF0")
-		report "register[5] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(6) = x"123456789ABCDEFFFEDCBA9876543210")
-		report "register[6] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(7) = x"00000001000100010001000100010000")
-		report "register[7] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(8) = x"1234CDEF1234CDEF1234CDEF1234CDEF")
-		report "register[8] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(9) = x"0000000000000000000000007FFFFFFF")
-		report "register[9] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(10) = x"00000000000000000000000000007FFF")
-		report "register[10] has the wrong value!" severity error;
-		
-		assert(ID_registers_tb(11) = x"0000000000000000000000007FFFFFFF")
-		report "register[11] has the wrong value!" severity error;
+		--given that we have 11 registers to check in the file:
+		for index in 0 to 11 loop
+			readline(read_file, txt_line);
+			hread(txt_line, register_vector);  
 			
+			assert(ID_registers_tb(index) = register_vector)
+			report "register[" & integer'image(index) & "] has the wrong value!" severity error;
+			wait for 100ns;
+		end loop;
+													
+		wait for 10ns;
+			
+		file_close(read_file);
 		
 		std.env.finish;
 	end process;
